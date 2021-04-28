@@ -12,8 +12,8 @@ public class Queries {
     private static Connection connect = null;
     private static Statement statement = null;
     private static ResultSet resultSet = null;
-    private static String url = "jdbc:mysql://localhost:3306/nominas";
-    private static String user = "root", pass = ""; //Esto hay que cambiarlo , es depende de que ordenador esteis
+    private static String url = "jdbc:mysql://db4free.net:3306/nominas2021";
+    private static String user ="admincide", pass = "Cide2021"; //Esto hay que cambiarlo , es depende de que ordenador esteis
 
     public static void main(String[] args) {
         // This will load the MySQL driver, each DB has its own driver
