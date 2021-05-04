@@ -1,32 +1,30 @@
-/**
- * PACKAGE_NAME
- * Nombre_project: BaseDeDatos
- * DataBase
- * Created by: sheng
- * Date : 12/03/2021
- * Description:
- **/
+/*
+  PACKAGE_NAME
+  Nombre_project: BaseDeDatos
+  DataBase
+  Created by: Sheng Diego y Daniel
+  Date : 12/03/2021
+  Description:
+ */
 import  java.sql.*;
 
+
 public class Queries {
-    private static Connection connect = null;
-    private static Statement statement = null;
-    private static ResultSet resultSet = null;
-    private static String url = "jdbc:mysql://db4free.net:3306/nominas2021";
-    private static String user ="admincide", pass = "Cide2021"; //Esto hay que cambiarlo , es depende de que ordenador esteis
 
     public static void main(String[] args) {
         // This will load the MySQL driver, each DB has its own driver
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");//Esto tambien puede qeu os pida que cambie
-            connect = DriverManager.getConnection(url, user, pass);
+            String url = "jdbc:mysql://db4free.net:3306/nominas2021";
+            String user = "admincide";
+            String pass = "Cide2021";
+            Connection connect = DriverManager.getConnection(url, user, pass);
             // Statements allow to issue SQL queries to the database
-            statement = connect.createStatement();
+            Statement statement = connect.createStatement();
             // Result set get the result of the SQL query
-            resultSet = statement.executeQuery("select * from empleados");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+            ResultSet resultSet = statement.executeQuery("select * from empleados");
+
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
