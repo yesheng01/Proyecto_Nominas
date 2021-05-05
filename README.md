@@ -1,13 +1,33 @@
 # Proyecto_Nominas
 
-Host: bq7xcggx4wgir1svxet5-mysql.services.clever-cloud.com
+Base de datos principal:
 
-Data Base Name: bq7xcggx4wgir1svxet5
+  Host: bq7xcggx4wgir1svxet5-mysql.services.clever-cloud.com
 
-User: ucaywecixura7e1v
+  Data Base Name: bq7xcggx4wgir1svxet5
 
-Password: z20eE9b0KKtixeD35nHS
+  User: ucaywecixura7e1v
 
-Port: 3306
+  Password: z20eE9b0KKtixeD35nHS
 
-jdbc:mysql://bq7xcggx4wgir1svxet5-mysql.services.clever-cloud.com:3306/bq7xcggx4wgir1svxet5
+  Port: 3306
+
+  jdbc:mysql://bq7xcggx4wgir1svxet5-mysql.services.clever-cloud.com:3306/bq7xcggx4wgir1svxet5
+
+
+
+
+
+Base de datos por si falla:
+
+  Host: db4free.net
+
+  Data Base Name: nominas2021
+
+  User: admincide
+
+  Password: Cide2021
+
+  Port: 3306
+
+  jdbc:mysql://db4free.net:3306/nominas2021
