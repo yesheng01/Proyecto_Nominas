@@ -11,7 +11,7 @@ public class Engine {
 
     public Engine() throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://db4free.net:3306/nominas2021","admincide","Cide2021");
+        conn = DriverManager.getConnection("jdbc:mysql://bq7xcggx4wgir1svxet5-mysql.services.clever-cloud.com:3306/bq7xcggx4wgir1svxet5","ucaywecixura7e1v","z20eE9b0KKtixeD35nHS");
     }
     public void tancar()throws Exception{
         conn.close();
