@@ -4,102 +4,137 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq t {space ::8:x, par l {seq t {par l {seq l {par l {comp label11::l:p::p, comp label12::l:p::p}, space :::p, par l {comp textField9:::p:151:p, comp textField8:::p:151:p}}, seq l {comp label13:::p::p, space u:::p, comp textField10:::p:151:p}, seq l {space :p:64:p, comp button2:::p:165:p}}, space :p:132:p}, seq t {comp label10:::p:556:p, space :::p}}}, seq {par l {seq l {space :p:12:p, par t {comp label3:::p:68:p, comp label2:::p:62:p}, space :::p, par l {comp textField4:::p:189:p, comp textField5::t:p:189:p}, space :::p, par l {comp label4:::::x, seq {comp label5:::p:68:p, space :0:0:x}}, space :::p, par l {comp textField6:::p:189:p, comp textField7:::p:189:p}}, seq l {space :p:148:p, comp label6:::p::p, space :p:1:p, comp textField1:::p:39:p, space :::p, comp label7:::p::p, space u:::p, comp textField2:::p::p, space u:::p, comp label8:::p::p, space :::p, comp textField3:::p::p}}, space ::26:x}, seq l {par l {seq l {space :p:235:p, comp label1:::p::p}, seq l {space :p:258:p, comp label9:::p::p}, seq l {space :p:194:p, par l {comp button1:::p:179:p, comp comboBox1:::p:181:p}}}, space :0:195:x}}"
-			"$verticalGroup": "par l {seq l {space :p:19:p, comp label1:::p::p, space :p:32:p, comp label9:::p::p, space :::p, comp comboBox1:::p::p, space :::p, comp button1:::p::p, space :p:24:p, par b {comp label2::b:p::p, comp textField4::b:p::p, comp label4::b:p::p, comp textField6::b:p::p}, space :::p, par l {par b {comp label3::b:p::p, comp textField5::b:p::p}, par b:t {comp textField7::b:p::p, comp label5::b:p::p}}, space ::28:x, par b {comp label6::b:p::p, comp textField1::b:p::p, comp label7::b:p::p, comp textField2::b:p::p, comp label8::b:p::p, comp textField3::b:p::p}, space :::p, comp label10:::p::p, space :::p, par b {comp label11::b:p::p, comp textField8::b:p::p}, space :p:12:p, par b {comp label12::b:p::p, comp textField9::b:p::p}, space u:::p, par b {comp label13::b:p::p, comp textField10::b:p::p}, space s:::p, comp button2:::p::p, space :p:27:p}}"
+			"$horizontalGroup": "par l {seq {space :p:211:p, comp ar_button:::p:149:p, space :0:210:x}, seq {par l {seq t {space :p:123:p, par l {comp fecha_inicio:::p::p, comp fecha_final:::p::p}, par t {seq t {comp ff_dia:::p::p, space :1:1:p, comp ff_dia_tf:::p:39:p, space :::p, comp ff_mes:::p::p, space :::p, comp ff_mes_tf:::p::p, space :::p, comp ff_año:::p::p, space :::p, comp ff_año_tf:::p::p}, seq t {comp fi_dia:::p::p, space :p:1:p, comp fi_dia_tf:::p:39:p, space :::p, comp fi_mes:::p::p, space :::p, comp fi_mes_tf:::p::p, space :::p, comp fi_año:::p::p, space :::p, comp fi_año_tf:::p::p}}, space :p:111:p}, seq {space :p:258:p, comp dni_nif:::p::p}, seq {space :::p, par l {comp separator::t::0:x, seq t {par l {comp nombre:::p:62:p, comp apellidos::l:p:68:p}, space :::p, par l {comp apellidos_tf:::p:189:p, comp nombre_tf::l:p:189:p}, space u:::p, par l {seq {comp direccion:::p:68:p, space :0:1:x}, comp email::l:::x}, space :::p, par l:::p {comp email_tf::::200:x, comp direccion_tf::::200:x}, space :p:8:p}, seq l {comp logocide:::p::p, space :p:56:p, par l {comp dni_nif_r:::p:181:p, comp titulo:::p::p}, space :0:188:x}}}}, space :::p}, seq t {space :::x, par l {seq t {par l {seq l {par l {comp hefm::l:p::p, comp her::l:p::p}, space :::p, par l {comp her_tf:::p:151:p, comp hefm_tf:::p:151:p}}, seq l {comp hc:::p::p, space u:::p, comp hc_tf:::p:151:p}}, space :p:134:p}, seq t {comp gn_button:::p:165:p, space :p:198:p}}}}"
+			"$verticalGroup": "par l {seq l {space :::p, par l {seq {comp logocide:::p::p, space :p:21:p}, seq t {comp titulo:::p::p, space :::p}}, comp dni_nif:::p::p, space :::p, comp dni_nif_r:::p::p, space :::p, comp ar_button:::p::p, space ::29:x, par b {comp nombre::b:p::p, comp nombre_tf::b:p::p, comp email_tf::b:p::p, comp email::b:p::p}, space :::p, par b {comp apellidos::b:p::p, comp apellidos_tf::b:p::p, comp direccion::b:p::p, comp direccion_tf::b:p::p}, par l {seq l {space :p:13:p, comp fecha_inicio:::p::p}, seq l {space :::p, par b {comp fi_dia::b:p::p, comp fi_dia_tf::b:p::p, comp fi_mes::b:p::p, comp fi_mes_tf::b:p::p, comp fi_año::b:p::p, comp fi_año_tf::b:p::p}, par l {par b:l {comp ff_dia_tf::b:p::p, comp ff_mes::b:p::p, comp ff_mes_tf::b:p::p, comp ff_año_tf::b:p::p, comp ff_año::b:p::p}, seq l {space :7:7:p, par b {comp ff_dia::b:p::p, comp fecha_final::b:p::p}}}}}, space :p:18:p, comp separator:::p::p, space :::p, par b {comp hefm::b:p::p, comp hefm_tf::b:p::p}, space :p:12:p, par b {comp her::b:p::p, comp her_tf::b:p::p}, space u:::p, par b {comp hc::b:p::p, comp hc_tf::b:p::p}, space :::p, comp gn_button:::p::p, space :p:12:p}}"
 		} ) {
 			name: "this"
+			"doubleBuffered": false
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label1"
+				name: "titulo"
 				"text": "NOMINABALEARS"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 2, 10, false )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label2"
+				name: "nombre"
 				"text": "Nombre: "
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label3"
+				name: "apellidos"
 				"text": "Apellidos: "
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label4"
+				name: "email"
 				"text": "E-Mail: "
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label5"
+				name: "direccion"
 				"text": "Dirección: "
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label6"
+				name: "fi_dia"
 				"text": "Dia: "
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label7"
+				name: "fi_mes"
 				"text": "Mes: "
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label8"
+				name: "fi_año"
 				"text": "Año: "
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField1"
+				name: "fi_dia_tf"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField2"
+				name: "fi_mes_tf"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField3"
+				name: "fi_año_tf"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label9"
+				name: "dni_nif"
 				"text": "DNI o NIF:"
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "comboBox1"
+				name: "dni_nif_r"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField4"
+				name: "nombre_tf"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField5"
+				name: "apellidos_tf"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField6"
+				name: "email_tf"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField7"
+				name: "direccion_tf"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
+				name: "ar_button"
 				"text": "Auto Rellenar"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label10"
-				"text": "...................................................................................................................................................................................................."
+				name: "separator"
+				"text": "......................................................................................................................................................................................................"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label11"
+				name: "hefm"
 				"text": "Horas Extra Fuerza Mayor: "
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label12"
+				name: "her"
 				"text": "Horas Extra Resto:"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label13"
+				name: "hc"
 				"text": "Horas Complementarias: "
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField8"
+				name: "hefm_tf"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField9"
+				name: "her_tf"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField10"
+				name: "hc_tf"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button2"
+				name: "gn_button"
 				"text": "Generar Nomina"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "ff_dia"
+				"text": "Dia: "
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "ff_mes"
+				"text": "Mes: "
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "ff_año"
+				"text": "Año: "
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "ff_dia_tf"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "ff_mes_tf"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "ff_año_tf"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "fecha_inicio"
+				"text": "Fecha Inicio: "
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "fecha_final"
+				"text": "Fecha Final: "
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "logocide"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/recursos/logomaspeque.png" )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
