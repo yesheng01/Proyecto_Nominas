@@ -7,12 +7,12 @@ new FormModel {
 			"$horizontalGroup": "par l {seq {space :p:211:p, comp ar_button:::p:149:p, space :0:210:x}, seq {par l {seq t {space :p:123:p, par l {comp fecha_inicio:::p::p, comp fecha_final:::p::p}, par t {seq t {comp ff_dia:::p::p, space :1:1:p, comp ff_dia_tf:::p:39:p, space :::p, comp ff_mes:::p::p, space :::p, comp ff_mes_tf:::p::p, space :::p, comp ff_año:::p::p, space :::p, comp ff_año_tf:::p::p}, seq t {comp fi_dia:::p::p, space :p:1:p, comp fi_dia_tf:::p:39:p, space :::p, comp fi_mes:::p::p, space :::p, comp fi_mes_tf:::p::p, space :::p, comp fi_año:::p::p, space :::p, comp fi_año_tf:::p::p}}, space :p:111:p}, seq {space :p:258:p, comp dni_nif:::p::p}, seq {space :::p, par l {comp separator::t::0:x, seq t {par l {comp nombre:::p:62:p, comp apellidos::l:p:68:p}, space :::p, par l {comp apellidos_tf:::p:189:p, comp nombre_tf::l:p:189:p}, space u:::p, par l {seq {comp direccion:::p:68:p, space :0:1:x}, comp email::l:::x}, space :::p, par l:::p {comp email_tf::::200:x, comp direccion_tf::::200:x}, space :p:8:p}, seq l {comp logocide:::p::p, space :p:56:p, par l {comp dni_nif_r:::p:181:p, comp titulo:::p::p}, space :0:188:x}}}}, space :::p}, seq t {space :::x, par l {seq t {par l {seq l {par l {comp hefm::l:p::p, comp her::l:p::p}, space :::p, par l {comp her_tf:::p:151:p, comp hefm_tf:::p:151:p}}, seq l {comp hc:::p::p, space u:::p, comp hc_tf:::p:151:p}}, space :p:134:p}, seq t {comp gn_button:::p:165:p, space :p:198:p}}}}"
 			"$verticalGroup": "par l {seq l {space :::p, par l {seq {comp logocide:::p::p, space :p:21:p}, seq t {comp titulo:::p::p, space :::p}}, comp dni_nif:::p::p, space :::p, comp dni_nif_r:::p::p, space :::p, comp ar_button:::p::p, space ::29:x, par b {comp nombre::b:p::p, comp nombre_tf::b:p::p, comp email_tf::b:p::p, comp email::b:p::p}, space :::p, par b {comp apellidos::b:p::p, comp apellidos_tf::b:p::p, comp direccion::b:p::p, comp direccion_tf::b:p::p}, par l {seq l {space :p:13:p, comp fecha_inicio:::p::p}, seq l {space :::p, par b {comp fi_dia::b:p::p, comp fi_dia_tf::b:p::p, comp fi_mes::b:p::p, comp fi_mes_tf::b:p::p, comp fi_año::b:p::p, comp fi_año_tf::b:p::p}, par l {par b:l {comp ff_dia_tf::b:p::p, comp ff_mes::b:p::p, comp ff_mes_tf::b:p::p, comp ff_año_tf::b:p::p, comp ff_año::b:p::p}, seq l {space :7:7:p, par b {comp ff_dia::b:p::p, comp fecha_final::b:p::p}}}}}, space :p:18:p, comp separator:::p::p, space :::p, par b {comp hefm::b:p::p, comp hefm_tf::b:p::p}, space :p:12:p, par b {comp her::b:p::p, comp her_tf::b:p::p}, space u:::p, par b {comp hc::b:p::p, comp hc_tf::b:p::p}, space :::p, comp gn_button:::p::p, space :p:12:p}}"
 		} ) {
-			name: "this"
+			name: "ventanaMain"
 			"doubleBuffered": false
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "titulo"
 				"text": "NOMINABALEARS"
-				"font": new com.jformdesigner.model.SwingDerivedFont( null, 2, 10, false )
+				"font": &SwingDerivedFont0 new com.jformdesigner.model.SwingDerivedFont( null, 2, 10, false )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "nombre"
@@ -134,11 +134,459 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "logocide"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/recursos/logomaspeque.png" )
+				"icon": &SwingIcon0 new com.jformdesigner.model.SwingIcon( 0, "/recursos/logomaspeque.png" )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
 			"size": new java.awt.Dimension( 570, 520 )
+		} )
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq t {space :0:0:x, comp button4:::p::p}, seq {space :::p, comp logocide2:::p::p, space :p:56:p, comp titulo2:::p::p, space :0:0:x}, seq l {space :6:6:p, par l {comp panel3::t:::x, seq l {comp panel1:::p:276:p, space :::p, comp panel2:::::x}, seq l {comp id_nomina:::p::p, space :::p, comp id_nomina_num:::p::p}}}}, space :::p}, seq t {space :0:94:x, par t:::p {comp button2::::385:x, comp button1::::385:x, comp button3::::385:x}, space :p:91:p}, seq {space :::p, par l {comp panel6::l:::x, seq l {comp panel5:::p:552:p, space :0:6:x}, comp panel4::l:::x}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :::p, par l {comp logocide2:::p::p, comp titulo2::l:p::p}, space ::34:x, par b {comp id_nomina::b:p::p, comp id_nomina_num::b:p::p}, space :::p, par l {comp panel1:::p::p, comp panel2:::p:145:p}, space :::p, comp panel3:::p::p, space :::p, comp panel4:::p:144:p, space :::p, comp panel5:::p:122:p, space u:::p, comp panel6:::p:29:p, space u:::p, comp button1::::31:x, space :::p, comp button2:::p::p, space :::p, comp button3:::p::p, space :::p, comp button4:::p::p, space :::p}}"
+		} ) {
+			name: "ventanaNomina"
+			"doubleBuffered": false
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "titulo2"
+				"text": "NOMINABALEARS"
+				"font": #SwingDerivedFont0
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "logocide2"
+				"icon": #SwingIcon0
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "id_nomina"
+				"text": "ID Nomina: "
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+				"$layoutConstraints": "fillx,hidemode 3"
+				"$columnConstraints": "[fill][fill]"
+				"$rowConstraints": "[][][][][]"
+			} ) {
+				name: "panel1"
+				"border": new javax.swing.border.TitledBorder( null, "Empleado", 2, 2 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "DNI:"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "in_dni"
+					"text": "instert1"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "Nombre: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "in_nom"
+					"text": "instert2"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": "Apellidos: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "in_lape"
+					"text": "instert3"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label5"
+					"text": "Grupo Profesional: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 3"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "in_gp"
+					"text": "instert4"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 3"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label6"
+					"text": "Grupo de Cotización"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 4"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "in_gc"
+					"text": "instert5"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 4"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+				"$layoutConstraints": "fillx,hidemode 3"
+				"$columnConstraints": "[fill][fill]"
+				"$rowConstraints": "[][][][][]"
+			} ) {
+				name: "panel2"
+				"border": new javax.swing.border.TitledBorder( null, "Empresa", 2, 2 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label7"
+					"text": "Nombre: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "in_emp_nom"
+					"text": "instert1"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label8"
+					"text": "Domicilio: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "in_dom"
+					"text": "instert2"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label9"
+					"text": "Localidad: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "in_loc"
+					"text": "instert3"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label10"
+					"text": "CIF: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 3"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "in_cif"
+					"text": "instert4"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 3"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label11"
+					"text": "CCC de la SS: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 4"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "in_ccc"
+					"text": "instert5"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 4"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+				"$layoutConstraints": "fillx,hidemode 3"
+				"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill][fill]"
+				"$rowConstraints": "[]"
+			} ) {
+				name: "panel3"
+				"border": new javax.swing.border.BevelBorder( 1, null, null, null, null )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "periodo"
+					"text": "Periodo de Liquidación: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "del"
+					"text": "del"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 2 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "dia_inicio"
+					"text": "00"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 4 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "mes_inicio"
+					"text": "00"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 5 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "año__inicio"
+					"text": "0000"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 6 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "al"
+					"text": "al"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 8 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "dia_final"
+					"text": "00"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 10 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "mes__final"
+					"text": "00"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 11 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "año__final"
+					"text": "0000"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 12 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "total_dias"
+					"text": "Total de dias: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 13 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "total_dias_num"
+					"text": "00"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 14 0"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "id_nomina_num"
+				"text": "00000000000000"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+				"$layoutConstraints": "fillx,hidemode 3"
+				"$columnConstraints": "[][fill]"
+				"$rowConstraints": "[][][][][][][]"
+			} ) {
+				name: "panel4"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "Salario Base:"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label21"
+					"text": "0000.00"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label12"
+					"text": "Horas Extra Fuerza Mayor: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label35"
+					"text": "000"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label13"
+					"text": "Horas Extra Resto:"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label36"
+					"text": "000"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label14"
+					"text": "Horas Complementarias: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 3"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label37"
+					"text": "000"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 3"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label15"
+					"text": "Antiguedad: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 4"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label38"
+					"text": "000"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 4"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label34"
+					"text": "TOTAL DEVENGADO: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 5"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label39"
+					"text": "0000.00"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 5"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+				"$layoutConstraints": "fillx,hidemode 3"
+				"$columnConstraints": "[][fill][fill]"
+				"$rowConstraints": "[][][][][][]"
+			} ) {
+				name: "panel5"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label16"
+					"text": "Contingencias comunes: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label23"
+					"text": "porcentaje"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label28"
+					"text": "euros"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 2 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label17"
+					"text": "Formación Profesional: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label24"
+					"text": "porcentaje"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label29"
+					"text": "euros"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 2 1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label18"
+					"text": "IRPF: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label25"
+					"text": "porcenaje"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label30"
+					"text": "euros"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 2 2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label19"
+					"text": "Anticipos: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 3"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label26"
+					"text": "porcentaje"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 3"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label31"
+					"text": "euros"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 2 3"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label20"
+					"text": "TOTAL A DEDUCIR: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 4"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label27"
+					"text": "0000"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 4"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+				"$layoutConstraints": "fillx,hidemode 3"
+				"$columnConstraints": "[fill][fill][fill]"
+				"$rowConstraints": "[38]"
+			} ) {
+				name: "panel6"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label22"
+					"text": "LIQUIDO TOTAL A PERCIBIR: "
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label32"
+					"text": "0000.00"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label33"
+					"text": "€"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 2 0"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Generar PDF"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "Generar CSV"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "Generar XML"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button4"
+				"text": "EXIT"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 600, 10 )
+			"size": new java.awt.Dimension( 570, 765 )
 		} )
 	}
 }
