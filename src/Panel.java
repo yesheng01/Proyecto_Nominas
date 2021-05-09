@@ -15,7 +15,6 @@ import javax.swing.JComboBox;
 public class Panel {
 
 	private JFrame frame;
-	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -80,8 +79,8 @@ public class Panel {
 		JLabel lblNewLabel_4 = new JLabel("E-Mail");
 		
 		JLabel lblNewLabel_5 = new JLabel("Direccion");
-		
-		textField = new JTextField();
+
+		JTextField textField = new JTextField();
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
@@ -142,7 +141,7 @@ public class Panel {
 		textField_12 = new JTextField();
 		textField_12.setColumns(10);
 		
-		JButton btnNewButton_1 = new JButton("Generar Nomina");
+		JButton btnNewButton_1 = new JButton("Generar");
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)

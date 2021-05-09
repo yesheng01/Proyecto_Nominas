@@ -1,4 +1,4 @@
-package ejercicios;
+
 
 import java.awt.EventQueue;
 
