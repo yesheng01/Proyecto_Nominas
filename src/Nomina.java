@@ -9,7 +9,7 @@
 import  java.sql.*;
 
 
-public class Empleado {
+public class Nomina {
 
     private int id;
     private String dni;
@@ -19,7 +19,7 @@ public class Empleado {
     private String direccion;
 
 
-    public Empleado(int i, String d, String n, String ap, String ae, String dir){
+    public Nomina(int i, String d, String n, String ap, String ae, String dir){
         setId(i);
         setDni(d);
         setNom(n);
