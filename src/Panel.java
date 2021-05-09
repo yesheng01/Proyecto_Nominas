@@ -2,11 +2,8 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import javax.swing.JTextPane;
 import javax.swing.JLabel;
-import java.awt.GridLayout;
+import java.util.ArrayList;
 import javax.swing.JTextField;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -31,6 +28,7 @@ public class Panel {
 	private JTextField textField_10;
 	private JTextField textField_11;
 	private JTextField textField_12;
+	private JComboBox<Object> comboBox;
 
 	/**
 	 * Launch the application.
@@ -51,8 +49,10 @@ public class Panel {
 	/**
 	 * Create the application.
 	 */
-	public Panel() {
+	public Panel() throws Exception {
 		initialize();
+		Engine engine = new Engine();
+		addDnis(engine.dnis());
 	}
 
 	/**
@@ -62,6 +62,7 @@ public class Panel {
 		frame = new JFrame();
 		frame.setBounds(200, 200, 500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
 		
 		JLabel lblNewLabel = new JLabel("NOMINABALEAR");
 		lblNewLabel.setFont(lblNewLabel.getFont().deriveFont(lblNewLabel.getFont().getStyle()));
@@ -70,7 +71,7 @@ public class Panel {
 		
 		JButton btnNewButton = new JButton("Auto Rellenar");
 		
-		JComboBox comboBox = new JComboBox();
+		comboBox = new JComboBox<>();
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombre");
 		
@@ -289,5 +290,12 @@ public class Panel {
 					.addContainerGap(25, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
+	}
+
+	public void addDnis(ArrayList allDnis){
+		for (int i = 0; i < allDnis.size(); i++){
+			comboBox.addItem(allDnis.get(i));
+		}
+
 	}
 }
