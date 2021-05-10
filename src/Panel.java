@@ -63,22 +63,22 @@ public class Panel {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		
-		JLabel lblNewLabel = new JLabel("NOMINABALEAR");
-		lblNewLabel.setFont(lblNewLabel.getFont().deriveFont(lblNewLabel.getFont().getStyle()));
+		JLabel label_Titulo = new JLabel("NOMINABALEAR");
+		label_Titulo.setFont(label_Titulo.getFont().deriveFont(label_Titulo.getFont().getStyle()));
 		
-		JLabel lblNewLabel_1 = new JLabel("DNI o NIF");
+		JLabel dni_o_nif = new JLabel("DNI o NIF");
 		
-		JButton btnNewButton = new JButton("Auto Rellenar");
+		JButton auto_rellenar = new JButton("Auto Rellenar");
 		
 		comboBox = new JComboBox<>();
 		
-		JLabel lblNewLabel_2 = new JLabel("Nombre");
+		JLabel nombre = new JLabel("Nombre: ");
 		
-		JLabel lblNewLabel_3 = new JLabel("Apellido");
+		JLabel apellido = new JLabel("Apellidos: ");
 		
-		JLabel lblNewLabel_4 = new JLabel("E-Mail");
+		JLabel email = new JLabel("E-Mail: ");
 		
-		JLabel lblNewLabel_5 = new JLabel("Direccion");
+		JLabel direccion = new JLabel("Direccion: ");
 
 		JTextField textField = new JTextField();
 		textField.setColumns(10);
@@ -92,13 +92,13 @@ public class Panel {
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
 		
-		JLabel lblNewLabel_6 = new JLabel("Fecha_Inicial");
+		JLabel fecha_inicial = new JLabel("Fecha Inicial:");
 		
-		JLabel lblNewLabel_6_1 = new JLabel("Fecha_Final");
+		JLabel fecha_final = new JLabel("Fecha Final:");
 		
-		JLabel lblNewLabel_7 = new JLabel("dia");
+		JLabel dia_i = new JLabel("dia");
 		
-		JLabel lblNewLabel_8 = new JLabel("dia");
+		JLabel dia_f = new JLabel("dia");
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
@@ -106,9 +106,9 @@ public class Panel {
 		textField_5 = new JTextField();
 		textField_5.setColumns(10);
 		
-		JLabel lblNewLabel_9 = new JLabel("mes");
+		JLabel mes_i = new JLabel("mes");
 		
-		JLabel lblNewLabel_9_1 = new JLabel("mes");
+		JLabel mes_f = new JLabel("mes");
 		
 		textField_6 = new JTextField();
 		textField_6.setColumns(10);
@@ -116,9 +116,9 @@ public class Panel {
 		textField_7 = new JTextField();
 		textField_7.setColumns(10);
 		
-		JLabel lblNewLabel_10 = new JLabel("año");
+		JLabel any_i = new JLabel("año");
 		
-		JLabel lblNewLabel_11 = new JLabel("año");
+		JLabel any_f = new JLabel("año");
 		
 		textField_8 = new JTextField();
 		textField_8.setColumns(10);
@@ -126,11 +126,11 @@ public class Panel {
 		textField_9 = new JTextField();
 		textField_9.setColumns(10);
 		
-		JLabel lblNewLabel_12 = new JLabel("Horas Extra Fuerza Mayor: ");
+		JLabel hefm = new JLabel("Horas Extra Fuerza Mayor: ");
 		
-		JLabel lblNewLabel_12_1 = new JLabel("Horas extra Resto: ");
+		JLabel her = new JLabel("Horas extra Resto: ");
 		
-		JLabel lblNewLabel_12_1_1 = new JLabel("Horas Complementarias: ");
+		JLabel hc = new JLabel("Horas Complementarias: ");
 		
 		textField_10 = new JTextField();
 		textField_10.setColumns(10);
@@ -150,37 +150,37 @@ public class Panel {
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGap(190)
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
-								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
+								.addComponent(dni_o_nif, GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+								.addComponent(label_Titulo, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)
 								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
 									.addComponent(comboBox, Alignment.LEADING, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addComponent(btnNewButton, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+									.addComponent(auto_rellenar, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 								.addGroup(groupLayout.createSequentialGroup()
 									.addGap(14)
 									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-										.addComponent(lblNewLabel_2, GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
-										.addComponent(lblNewLabel_3))
+										.addComponent(nombre, GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+										.addComponent(apellido))
 									.addGap(6)
 									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 										.addGroup(groupLayout.createSequentialGroup()
 											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-												.addComponent(lblNewLabel_6, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
-												.addComponent(lblNewLabel_6_1, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE))
+												.addComponent(fecha_inicial, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+												.addComponent(fecha_final, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE))
 											.addGap(27)
 											.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-												.addComponent(lblNewLabel_8, GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-												.addComponent(lblNewLabel_7, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
+												.addComponent(dia_f, GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+												.addComponent(dia_i, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
 										.addComponent(textField_1)
 										.addComponent(textField, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
 									.addPreferredGap(ComponentPlacement.RELATED))
 								.addGroup(groupLayout.createSequentialGroup()
 									.addGap(64)
 									.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-										.addComponent(lblNewLabel_12_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(lblNewLabel_12_1_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(lblNewLabel_12, GroupLayout.PREFERRED_SIZE, 155, GroupLayout.PREFERRED_SIZE))
+										.addComponent(her, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(hc, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+										.addComponent(hefm, GroupLayout.PREFERRED_SIZE, 155, GroupLayout.PREFERRED_SIZE))
 									.addGap(36)))
 							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(groupLayout.createSequentialGroup()
@@ -191,28 +191,28 @@ public class Panel {
 												.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
 													.addComponent(textField_5, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
 													.addComponent(textField_4, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
-												.addComponent(lblNewLabel_5))
+												.addComponent(direccion))
 											.addPreferredGap(ComponentPlacement.RELATED))
-										.addComponent(lblNewLabel_4, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
+										.addComponent(email, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
 									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 										.addGroup(groupLayout.createSequentialGroup()
 											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 												.addGroup(groupLayout.createSequentialGroup()
-													.addComponent(lblNewLabel_9_1)
+													.addComponent(mes_f)
 													.addPreferredGap(ComponentPlacement.RELATED)
 													.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
 												.addGroup(groupLayout.createSequentialGroup()
-													.addComponent(lblNewLabel_9)
+													.addComponent(mes_i)
 													.addPreferredGap(ComponentPlacement.RELATED)
 													.addComponent(textField_6, 0, 0, Short.MAX_VALUE)))
 											.addPreferredGap(ComponentPlacement.RELATED)
 											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 												.addGroup(groupLayout.createSequentialGroup()
-													.addComponent(lblNewLabel_10)
+													.addComponent(any_i)
 													.addPreferredGap(ComponentPlacement.RELATED)
 													.addComponent(textField_8, 0, 0, Short.MAX_VALUE))
 												.addGroup(groupLayout.createSequentialGroup()
-													.addComponent(lblNewLabel_11)
+													.addComponent(any_f)
 													.addPreferredGap(ComponentPlacement.RELATED)
 													.addComponent(textField_9, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))))
 										.addGroup(groupLayout.createSequentialGroup()
@@ -235,55 +235,55 @@ public class Panel {
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+					.addComponent(label_Titulo, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
 					.addGap(1)
-					.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+					.addComponent(dni_o_nif, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton)
+					.addComponent(auto_rellenar)
 					.addGap(36)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_4, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
+						.addComponent(nombre, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
+						.addComponent(email, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
+						.addComponent(apellido, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_5, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE))
+						.addComponent(direccion, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE))
 					.addGap(31)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_6, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_7)
+						.addComponent(fecha_inicial, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addComponent(dia_i)
 						.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_9)
+						.addComponent(mes_i)
 						.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_10)
+						.addComponent(any_i)
 						.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_6_1, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_8)
+						.addComponent(fecha_final, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addComponent(dia_f)
 						.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_9_1)
+						.addComponent(mes_f)
 						.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_11)
+						.addComponent(any_f)
 						.addComponent(textField_9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(18)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_12, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+						.addComponent(hefm, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textField_10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_12_1, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+						.addComponent(her, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 						.addComponent(textField_11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(textField_12, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_12_1_1, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+						.addComponent(hc, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(25, Short.MAX_VALUE))
