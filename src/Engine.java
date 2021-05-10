@@ -104,6 +104,15 @@ public class Engine {
         return direc;
     }
 
+    public int getNum_ss(String dni) throws SQLException {
+        Statement st = conn.createStatement();
+        int num_ss;
+        ResultSet resultQuery = st.executeQuery("SELECT num_ss FROM empleados WHERE dni=" + dni + "");
+        resultQuery.next();
+        num_ss = resultQuery.getInt("num_ss");
+        return num_ss;
+    }
+
     public int getIrpf(String dni) throws SQLException {
         Statement st = conn.createStatement();
         int irpf;
@@ -240,7 +249,7 @@ public class Engine {
     /////////////////////////////////// GETERS-tipos_cotizacion_porcentual ////////////////////////////////////////////
 
 
-    public String getcontingencias(String contigencias) throws SQLException {
+    public String getContingencias(String contigencias) throws SQLException {
         Statement st = conn.createStatement();
         String cont;
         ResultSet resultQuery = st.executeQuery("SELECT contingencias FROM tipos_cotizacion_porcentual WHERE contingencias=" + contigencias + "");
@@ -256,5 +265,24 @@ public class Engine {
         resultQuery.next();
         tot = resultQuery.getDouble("grupo_cotizacion");
         return tot;
+    }
+
+    ///////////////////////////////////////////////// GETERS-Deducciones ///////////////////////////////////////////////
+
+    public int getPorcentaje_hefm(int id_convenio) throws SQLException {
+        Statement st = conn.createStatement();
+        int phefm;
+        ResultSet resultQuery = st.executeQuery("SELECT porce_hefm FROM deducciones WHERE id_convenio=" + id_convenio + "");
+        resultQuery.next();
+        phefm = resultQuery.getInt("porce_hefm");
+        return phefm;
+    }
+    public int getPorcentaje_her(int id_convenio) throws SQLException {
+        Statement st = conn.createStatement();
+        int pher;
+        ResultSet resultQuery = st.executeQuery("SELECT porce_her FROM deducciones WHERE id_convenio=" + id_convenio + "");
+        resultQuery.next();
+        pher = resultQuery.getInt("porce_her");
+        return pher;
     }
 }
