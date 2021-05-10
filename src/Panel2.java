@@ -45,7 +45,7 @@ public class Panel2 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(800, 800, 650, 1000);
+		frame.setBounds(800, 800, 650, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JLabel lblNewLabel = new JLabel("NOMINABALEAR");
