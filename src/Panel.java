@@ -19,10 +19,10 @@ public class Panel extends JFrame {
 
 	private JFrame frame;
 	private JLabel label_Titulo;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField name;
+	private JTextField lastname;
+	private JTextField email;
+	private JTextField direccion;
 	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
@@ -108,17 +108,17 @@ public class Panel extends JFrame {
 		
 		JLabel direccion = new JLabel("Direccion: ");
 
-		textField = new JTextField();
-		textField.setColumns(10);
+		name = new JTextField();
+		name.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
+		this.lastname = new JTextField();
+		this.lastname.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
+		this.email = new JTextField();
+		this.email.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
+		this.direccion = new JTextField();
+		this.direccion.setColumns(10);
 		
 		JLabel fecha_inicial = new JLabel("Fecha Inicial:");
 		
@@ -215,8 +215,8 @@ public class Panel extends JFrame {
 											.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 												.addComponent(dia_f, GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
 												.addComponent(dia_i, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
-										.addComponent(textField_1)
-										.addComponent(textField, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
+										.addComponent(lastname)
+										.addComponent(name, GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
 									.addPreferredGap(ComponentPlacement.RELATED))
 								.addGroup(groupLayout.createSequentialGroup()
 									.addGap(64)
@@ -261,8 +261,8 @@ public class Panel extends JFrame {
 										.addGroup(groupLayout.createSequentialGroup()
 											.addPreferredGap(ComponentPlacement.RELATED)
 											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-												.addComponent(textField_3)
-												.addComponent(textField_2, GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))))
+												.addComponent(this.direccion)
+												.addComponent(this.email, GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))))
 									.addPreferredGap(ComponentPlacement.RELATED, 27, Short.MAX_VALUE))
 								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
 									.addComponent(textField_11, Alignment.LEADING)
@@ -287,15 +287,15 @@ public class Panel extends JFrame {
 					.addComponent(auto_rellenar)
 					.addGap(36)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(name, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(nombre, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
 						.addComponent(email, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(this.email, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lastname, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(apellido, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(this.direccion, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(direccion, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE))
 					.addGap(31)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
@@ -354,10 +354,10 @@ public class Panel extends JFrame {
 			if (entradas != 0){
 				indiceActualEntrada = 0;
 				empleado = result.get(indiceActualEntrada);
-				textField_1.setText(""+empleado.getApellidos());
-				textField_2.setText(""+empleado.getAelectronica());
-				textField_3.setText(""+empleado.getDireccion());
-				textField.setText(""+empleado.getNom());
+				lastname.setText(""+empleado.getApellidos());
+				email.setText(""+empleado.getAelectronica());
+				direccion.setText(""+empleado.getDireccion());
+				name.setText(""+empleado.getNom());
 
 			}
 		}catch (Exception e){
