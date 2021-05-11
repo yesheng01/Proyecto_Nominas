@@ -142,7 +142,7 @@ public class Engine {
     public String getNombre(String dni) throws SQLException {
         Statement st = conn.createStatement();
         String nom;
-        ResultSet resultQuery = st.executeQuery("SELECT nombre FROM empleados WHERE dni=" + dni + "");
+        ResultSet resultQuery = st.executeQuery("SELECT nombre FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         nom = resultQuery.getString("nombre");
         return nom;
@@ -151,7 +151,7 @@ public class Engine {
     public String getApellidos(String dni) throws SQLException {
         Statement st = conn.createStatement();
         String app;
-        ResultSet resultQuery = st.executeQuery("SELECT apellidos FROM empleados WHERE dni=" + dni + "");
+        ResultSet resultQuery = st.executeQuery("SELECT apellidos FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         app = resultQuery.getString("apellidos");
         return app;
@@ -160,7 +160,7 @@ public class Engine {
     public String getMail(String dni) throws SQLException {
         Statement st = conn.createStatement();
         String mail;
-        ResultSet resultQuery = st.executeQuery("SELECT mail FROM empleados WHERE dni=" + dni + "");
+        ResultSet resultQuery = st.executeQuery("SELECT mail FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         mail = resultQuery.getString("mail");
         return mail;
@@ -169,7 +169,7 @@ public class Engine {
     public String getDireccion(String dni) throws SQLException {
         Statement st = conn.createStatement();
         String direc;
-        ResultSet resultQuery = st.executeQuery("SELECT direccion FROM empleados WHERE dni=" + dni + "");
+        ResultSet resultQuery = st.executeQuery("SELECT direccion FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         direc = resultQuery.getString("direccion");
         return direc;
@@ -178,7 +178,7 @@ public class Engine {
     public int getNum_ss(String dni) throws SQLException {
         Statement st = conn.createStatement();
         int num_ss;
-        ResultSet resultQuery = st.executeQuery("SELECT num_ss FROM empleados WHERE dni=" + dni + "");
+        ResultSet resultQuery = st.executeQuery("SELECT num_ss FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         num_ss = resultQuery.getInt("num_ss");
         return num_ss;
@@ -187,7 +187,7 @@ public class Engine {
     public int getIrpf(String dni) throws SQLException {
         Statement st = conn.createStatement();
         int irpf;
-        ResultSet resultQuery = st.executeQuery("SELECT irpf FROM empleados WHERE dni=" + dni + "");
+        ResultSet resultQuery = st.executeQuery("SELECT irpf FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         irpf = resultQuery.getInt("irpf");
         return irpf;
@@ -205,7 +205,7 @@ public class Engine {
     public int getSueldo_base(String dni) throws SQLException {
         Statement st = conn.createStatement();
         int sueldcon;
-        ResultSet resultQuery = st.executeQuery("SELECT sueldo_base FROM empleados WHERE dni=" + dni + "");
+        ResultSet resultQuery = st.executeQuery("SELECT sueldo_base FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         sueldcon = resultQuery.getInt("sueldo_base");
         return sueldcon;
@@ -214,7 +214,7 @@ public class Engine {
     public int getId_convenio(String dni) throws SQLException {
         Statement st = conn.createStatement();
         int idconv;
-        ResultSet resultQuery = st.executeQuery("SELECT id_convenio FROM empleados WHERE dni=" + dni + "");
+        ResultSet resultQuery = st.executeQuery("SELECT id_convenio FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         idconv = resultQuery.getInt("id_convenio");
         return idconv;
@@ -223,7 +223,7 @@ public class Engine {
     public String getGrupo_profesional(String dni) throws SQLException {
         Statement st = conn.createStatement();
         String grconv;
-        ResultSet resultQuery = st.executeQuery("SELECT grupo_profesional FROM empleados WHERE dni=" + dni + "");
+        ResultSet resultQuery = st.executeQuery("SELECT grupo_profesional FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         grconv = resultQuery.getString("grupo_profesional");
         return grconv;
@@ -233,7 +233,7 @@ public class Engine {
     public String getGrupo_cotizacion(String dni) throws SQLException {
         Statement st = conn.createStatement();
         String grcot;
-        ResultSet resultQuery = st.executeQuery("SELECT grupo_cotizacion  FROM empleados WHERE dni=" + dni + "");
+        ResultSet resultQuery = st.executeQuery("SELECT grupo_cotizacion  FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         grcot = resultQuery.getString("grupo_cotizacion");
         return grcot;
@@ -277,7 +277,7 @@ public class Engine {
     public String getCif(String nombre_empresa) throws SQLException {
         Statement st = conn.createStatement();
         String cif;
-        ResultSet resultQuery = st.executeQuery("SELECT cif  FROM empresa WHERE nombre_empresa=" + nombre_empresa + "");
+        ResultSet resultQuery = st.executeQuery("SELECT cif  FROM empresa WHERE nombre_empresa='" + nombre_empresa + "'");
         resultQuery.next();
         cif = resultQuery.getString("grupo_cotizacion");
         return cif;
@@ -286,7 +286,7 @@ public class Engine {
     public String getNombre_empresa(String cif) throws SQLException {
         Statement st = conn.createStatement();
         String ne;
-        ResultSet resultQuery = st.executeQuery("SELECT nombre_empresa  FROM empresa WHERE cif=" + cif + "");
+        ResultSet resultQuery = st.executeQuery("SELECT nombre_empresa  FROM empresa WHERE cif='" + cif + "'");
         resultQuery.next();
         ne = resultQuery.getString("grupo_cotizacion");
         return ne;
@@ -295,7 +295,7 @@ public class Engine {
     public String getDomicilo(String cif) throws SQLException {
         Statement st = conn.createStatement();
         String gd;
-        ResultSet resultQuery = st.executeQuery("SELECT domicilo  FROM empresa WHERE cif=" + cif + "");
+        ResultSet resultQuery = st.executeQuery("SELECT domicilo  FROM empresa WHERE cif='" + cif + "'");
         resultQuery.next();
         gd = resultQuery.getString("grupo_cotizacion");
         return gd;
@@ -303,7 +303,7 @@ public class Engine {
     public String getLocalidad(String cif) throws SQLException {
         Statement st = conn.createStatement();
         String gL;
-        ResultSet resultQuery = st.executeQuery("SELECT localidad  FROM empresa WHERE cif=" + cif + "");
+        ResultSet resultQuery = st.executeQuery("SELECT localidad  FROM empresa WHERE cif='" + cif + "'");
         resultQuery.next();
         gL = resultQuery.getString("grupo_cotizacion");
         return gL;
@@ -311,7 +311,7 @@ public class Engine {
     public int getCcc_ss(String nombre_empresa) throws SQLException {
         Statement st = conn.createStatement();
         int ccc_ss;
-        ResultSet resultQuery = st.executeQuery("SELECT ccc_ss  FROM empresa WHERE nombre_empresa=" + nombre_empresa + "");
+        ResultSet resultQuery = st.executeQuery("SELECT ccc_ss  FROM empresa WHERE nombre_empresa='" + nombre_empresa + "'");
         resultQuery.next();
         ccc_ss = resultQuery.getInt("grupo_cotizacion");
         return ccc_ss;
@@ -323,7 +323,7 @@ public class Engine {
     public String getContingencias(String contigencias) throws SQLException {
         Statement st = conn.createStatement();
         String cont;
-        ResultSet resultQuery = st.executeQuery("SELECT contingencias FROM tipos_cotizacion_porcentual WHERE contingencias=" + contigencias + "");
+        ResultSet resultQuery = st.executeQuery("SELECT contingencias FROM tipos_cotizacion_porcentual WHERE contingencias='" + contigencias + "'");
         resultQuery.next();
         cont = resultQuery.getString("grupo_cotizacion");
         return cont;
@@ -332,7 +332,7 @@ public class Engine {
     public double getTotal(String contigencias) throws SQLException {
         Statement st = conn.createStatement();
         Double tot;
-        ResultSet resultQuery = st.executeQuery("SELECT total FROM tipos_cotizacion_porcentual WHERE contingencias=" + contigencias + "");
+        ResultSet resultQuery = st.executeQuery("SELECT total FROM tipos_cotizacion_porcentual WHERE contingencias='" + contigencias + "'");
         resultQuery.next();
         tot = resultQuery.getDouble("grupo_cotizacion");
         return tot;
