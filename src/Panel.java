@@ -3,6 +3,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JTextField;
 import javax.swing.GroupLayout;
@@ -12,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 //import java.awt.font;
 
-public class Panel {
+public class Panel extends JFrame {
 
 	private JFrame frame;
 	private JTextField textField_1;
@@ -50,8 +52,12 @@ public class Panel {
 	 */
 	public Panel() throws Exception {
 		initialize();
+		this.getContentPane().setBackground(getBackground());
+		this.setLocationRelativeTo(null);
+		this.setTitle("Primer");
 		Engine engine = new Engine();
 		addDnis(engine.dnis());
+
 	}
 
 	/**
@@ -142,6 +148,21 @@ public class Panel {
 		textField_12.setColumns(10);
 		
 		JButton btnNewButton_1 = new JButton("Generar");
+		btnNewButton_1.addActionListener(
+				new ActionListener() {
+					@Override
+					public void actionPerformed(java.awt.event. ActionEvent evt) {
+						AbrirVentana(evt);
+					}
+				}
+		);
+		add(btnNewButton_1);
+
+
+
+
+
+
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
@@ -295,6 +316,15 @@ public class Panel {
 		for (int i = 0; i < allDnis.size(); i++){
 			comboBox.addItem(allDnis.get(i));
 		}
+	}
+
+	public void AbrirVentana(ActionEvent evt){
+		Panel2 form = new Panel2();
+		form.frame.setVisible(true);
+		this.dispose();
 
 	}
+
+
+
 }
