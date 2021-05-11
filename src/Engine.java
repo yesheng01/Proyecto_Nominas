@@ -16,10 +16,6 @@ public class Engine {
         conn.close();
     }
 
-    public void empleado() {
-
-    }
-
     public ArrayList<String> dnis() throws SQLException {
         ArrayList<String> alldni = new ArrayList<String>();
         String dni;
@@ -50,6 +46,60 @@ public class Engine {
             sqlException.printStackTrace();
         }
         return results;
+    }
+    public List<Nomina> getLastNomina(int idNom) throws Exception {
+        List<Nomina> results = null;
+        if (idNom == 0){
+            tancar();
+        }else {
+
+            Statement getNomById = conn.createStatement();
+            try {
+                ResultSet resultSet = getNomById.executeQuery("SELECT * FROM historial_nomina WHERE id='" + idNom + "'");
+                results = new ArrayList<Nomina>();
+                while (resultSet.next()) {
+                    results.add(new Nomina(
+                            resultSet.getInt("id"),
+                            resultSet.getString("dni_empleado"),
+                            resultSet.getString("nombre"),
+                            resultSet.getString("apellidos"),
+                            resultSet.getString("grupo_profesional"),
+                            resultSet.getString("grupo_cotizacion"),
+                            resultSet.getString("num_ss_emplado"),
+                            resultSet.getDouble("irpf"),
+                            resultSet.getString("nombre_empresa"),
+                            resultSet.getString("cif"),
+                            resultSet.getString("domicilio"),
+                            resultSet.getInt("ccc_de_ss"),
+                            resultSet.getString("localidad"),
+                            resultSet.getDate("fecha_inicio_nomina"),
+                            resultSet.getDate("fecha_final_nomina"),
+                            resultSet.getInt("total_dias"),
+                            resultSet.getDouble("salario_bruto"),
+                            resultSet.getDouble("total"),
+                            resultSet.getDouble("horas_extra_fm"),
+                            resultSet.getDouble("horas_extra_resto"),
+                            resultSet.getDouble("horas_complementarias"),
+                            resultSet.getDouble("contingencias_comunes"),
+                            resultSet.getDouble("antiguedad"),
+                            resultSet.getDouble("desempleo"),
+                            resultSet.getDouble("total_devengo"),
+                            resultSet.getDouble("total_a_deducir"),
+                            resultSet.getDouble("total_a_percibir")));
+                }
+            }catch (SQLException sqlException){
+                sqlException.printStackTrace();
+            }
+
+        }
+        return results;
+    }
+
+    public int obtenerUltimoId() throws Exception {
+        Statement cercaMaxId = conn.createStatement();
+        ResultSet r = cercaMaxId.executeQuery("SELECT MAX(ID) FROM historial_nominas");
+        if (r.next()) return (r.getInt(1));
+        else return 0;
     }
 
     /////////////////////////////////////////////////// GETERS-Convenios ///////////////////////////////////////////////
@@ -146,7 +196,7 @@ public class Engine {
     public java.sql.Date getFecha_Contratacion(String dni) throws SQLException {
         Statement st = conn.createStatement();
         java.sql.Date fecha;
-        ResultSet resultQuery = st.executeQuery("SELECT fecha_contratacion FROM empleados WHERE dni=" + dni + "");
+        ResultSet resultQuery = st.executeQuery("SELECT fecha_contratacion FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         fecha = resultQuery.getDate("fecha_contratacion");
         return fecha;

@@ -169,8 +169,8 @@ public class Panel extends JFrame {
 		textField_12 = new JTextField();
 		textField_12.setColumns(10);
 		
-		JButton btnNewButton_1 = new JButton("Generar");
-		btnNewButton_1.addActionListener(
+		JButton generar_button = new JButton("Generar");
+		generar_button.addActionListener(
 				new ActionListener() {
 					@Override
 					public void actionPerformed(java.awt.event. ActionEvent evt) {
@@ -178,7 +178,7 @@ public class Panel extends JFrame {
 					}
 				}
 		);
-		add(btnNewButton_1);
+		add(generar_button);
 
 
 
@@ -271,7 +271,7 @@ public class Panel extends JFrame {
 					.addContainerGap())
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap(188, Short.MAX_VALUE)
-					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 118, GroupLayout.PREFERRED_SIZE)
+					.addComponent(generar_button, GroupLayout.PREFERRED_SIZE, 118, GroupLayout.PREFERRED_SIZE)
 					.addGap(178))
 		);
 		groupLayout.setVerticalGroup(
@@ -328,7 +328,7 @@ public class Panel extends JFrame {
 						.addComponent(textField_12, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(hc, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+					.addComponent(generar_button, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(25, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
@@ -354,19 +354,15 @@ public class Panel extends JFrame {
 			if (entradas != 0){
 				indiceActualEntrada = 0;
 				empleado = result.get(indiceActualEntrada);
+				name.setText(""+empleado.getNom());
 				lastname.setText(""+empleado.getApellidos());
 				email.setText(""+empleado.getAelectronica());
 				direccion.setText(""+empleado.getDireccion());
-				name.setText(""+empleado.getNom());
 
 			}
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-	}
-
-	public String currentDniOnComboBox(){
-		return (String) comboBox.getItemAt(comboBox.getItemCount());
 	}
 
 }
