@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Engine {
     Connection conn;
@@ -19,7 +20,7 @@ public class Engine {
 
     }
 
-    public ArrayList dnis() throws SQLException {
+    public ArrayList<String> dnis() throws SQLException {
         ArrayList<String> alldni = new ArrayList<String>();
         String dni;
         Statement dnis = conn.createStatement();
@@ -29,6 +30,26 @@ public class Engine {
             alldni.add(dni);
         }
         return alldni;
+    }
+    public List<Empleado> getEmpleadoByDni(String dni) throws SQLException {
+        List<Empleado> results = null;
+        Statement getFDni = conn.createStatement();
+        try {
+            ResultSet resultSet = getFDni.executeQuery("SELECT * FROM empleados WHERE dni='" + dni + "'");
+            results = new ArrayList<Empleado>();
+            while (resultSet.next()) {
+                results.add(new Empleado(
+                        resultSet.getInt("id"),
+                        resultSet.getString("dni"),
+                        resultSet.getString("nombre"),
+                        resultSet.getString("apellidos"),
+                        resultSet.getString("mail"),
+                        resultSet.getString("direccion")));
+            }
+        }catch (SQLException sqlException){
+            sqlException.printStackTrace();
+        }
+        return results;
     }
 
     /////////////////////////////////////////////////// GETERS-Convenios ///////////////////////////////////////////////

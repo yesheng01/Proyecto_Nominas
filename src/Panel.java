@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JTextField;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -17,6 +18,8 @@ import javax.swing.JComboBox;
 public class Panel extends JFrame {
 
 	private JFrame frame;
+	private JLabel label_Titulo;
+	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -29,8 +32,13 @@ public class Panel extends JFrame {
 	private JTextField textField_10;
 	private JTextField textField_11;
 	private JTextField textField_12;
-	private JComboBox<Object> comboBox;
-
+	private JComboBox<String> comboBox;
+	private List<Empleado> result;
+	Engine engine = new Engine();
+	private  Empleado empleado;
+	String chosenName;
+	int entradas = 0;
+	int indiceActualEntrada;
 	/**
 	 * Launch the application.
 	 */
@@ -55,7 +63,7 @@ public class Panel extends JFrame {
 		this.getContentPane().setBackground(getBackground());
 		this.setLocationRelativeTo(null);
 		this.setTitle("Primer");
-		Engine engine = new Engine();
+
 		addDnis(engine.dnis());
 
 	}
@@ -69,14 +77,28 @@ public class Panel extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		
-		JLabel label_Titulo = new JLabel("NOMINABALEAR");
+		label_Titulo = new JLabel("NOMINABALEAR");
 		label_Titulo.setFont(label_Titulo.getFont().deriveFont(label_Titulo.getFont().getStyle()));
 		
 		JLabel dni_o_nif = new JLabel("DNI o NIF");
 		
 		JButton auto_rellenar = new JButton("Auto Rellenar");
+		auto_rellenar.addActionListener(
+				new ActionListener() {
+					@Override
+					public void actionPerformed(java.awt.event. ActionEvent evt) {
+						autoRellenar(evt);
+					}
+				}
+		);
+		add(auto_rellenar);
 		
 		comboBox = new JComboBox<>();
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				chosenName =  (String) comboBox.getSelectedItem();
+			}
+		});
 		
 		JLabel nombre = new JLabel("Nombre: ");
 		
@@ -86,7 +108,7 @@ public class Panel extends JFrame {
 		
 		JLabel direccion = new JLabel("Direccion: ");
 
-		JTextField textField = new JTextField();
+		textField = new JTextField();
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
@@ -312,19 +334,39 @@ public class Panel extends JFrame {
 		frame.getContentPane().setLayout(groupLayout);
 	}
 
-	public void addDnis(ArrayList allDnis){
-		for (int i = 0; i < allDnis.size(); i++){
-			comboBox.addItem(allDnis.get(i));
+	public void addDnis(ArrayList<String> allDnis){
+		for (String allDni : allDnis) {
+			comboBox.addItem(allDni);
 		}
 	}
 
 	public void AbrirVentana(ActionEvent evt){
 		Panel2 form = new Panel2();
-		form.frame.setVisible(true);
+		form.iniciar();
 		this.dispose();
 
 	}
 
+	public void autoRellenar(ActionEvent evt){
+		try {
+			result = engine.getEmpleadoByDni(chosenName);
+			entradas = result.size();
+			if (entradas != 0){
+				indiceActualEntrada = 0;
+				empleado = result.get(indiceActualEntrada);
+				textField_1.setText(""+empleado.getApellidos());
+				textField_2.setText(""+empleado.getAelectronica());
+				textField_3.setText(""+empleado.getDireccion());
+				textField.setText(""+empleado.getNom());
 
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+
+	public String currentDniOnComboBox(){
+		return (String) comboBox.getItemAt(comboBox.getItemCount());
+	}
 
 }
