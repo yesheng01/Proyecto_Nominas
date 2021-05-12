@@ -1,7 +1,11 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Engine {
@@ -40,7 +44,8 @@ public class Engine {
                         resultSet.getString("nombre"),
                         resultSet.getString("apellidos"),
                         resultSet.getString("mail"),
-                        resultSet.getString("direccion")));
+                        resultSet.getString("direccion"),
+                        resultSet.getInt("id_convenio")));
             }
         }catch (SQLException sqlException){
             sqlException.printStackTrace();
@@ -55,7 +60,7 @@ public class Engine {
 
             Statement getNomById = conn.createStatement();
             try {
-                ResultSet resultSet = getNomById.executeQuery("SELECT * FROM historial_nomina WHERE id='" + idNom + "'");
+                ResultSet resultSet = getNomById.executeQuery("SELECT * FROM historial_nominas WHERE id='" + idNom + "'");
                 results = new ArrayList<Nomina>();
                 while (resultSet.next()) {
                     results.add(new Nomina(
@@ -64,8 +69,8 @@ public class Engine {
                             resultSet.getString("nombre"),
                             resultSet.getString("apellidos"),
                             resultSet.getString("grupo_profesional"),
-                            resultSet.getString("grupo_cotizacion"),
-                            resultSet.getString("num_ss_emplado"),
+                            resultSet.getInt("grupo_cotzacion"),
+                            resultSet.getString("num_ss_empleado"),
                             resultSet.getDouble("irpf"),
                             resultSet.getString("nombre_empresa"),
                             resultSet.getString("cif"),
@@ -76,16 +81,17 @@ public class Engine {
                             resultSet.getDate("fecha_final_nomina"),
                             resultSet.getInt("total_dias"),
                             resultSet.getDouble("salario_bruto"),
-                            resultSet.getDouble("total"),
                             resultSet.getDouble("horas_extra_fm"),
                             resultSet.getDouble("horas_extra_resto"),
-                            resultSet.getDouble("horas_complementarias"),
+                            resultSet.getDouble("horas_complemetarias"),
                             resultSet.getDouble("contingencias_comunes"),
-                            resultSet.getDouble("antiguedad"),
-                            resultSet.getDouble("desempleo"),
                             resultSet.getDouble("total_devengo"),
                             resultSet.getDouble("total_a_deducir"),
-                            resultSet.getDouble("total_a_percibir")));
+                            resultSet.getDouble("total_a_percibir"),
+                            resultSet.getDouble("antiguedad"),
+                            resultSet.getDouble("formacion_porfesional")
+                            )
+                    );
                 }
             }catch (SQLException sqlException){
                 sqlException.printStackTrace();
@@ -100,6 +106,44 @@ public class Engine {
         ResultSet r = cercaMaxId.executeQuery("SELECT MAX(ID) FROM historial_nominas");
         if (r.next()) return (r.getInt(1));
         else return 0;
+    }
+
+    public int calcularAntiguedad (java.util.Date fecha_cont, java.util.Date fecha_fin){
+        Calendar ff = Calendar.getInstance();
+        Calendar fc = Calendar.getInstance();
+        fc.setTime(fecha_cont);
+        ff.setTime(fecha_fin);
+        int any = ff.get(Calendar.YEAR)- fc.get(Calendar.YEAR);
+        int mes =ff.get(Calendar.MONTH)- fc.get(Calendar.MONTH);
+        int dia = ff.get(Calendar.DATE)- fc.get(Calendar.DATE);
+        //Se ajusta el año dependiendo el mes y el día
+        if(mes<0 || (mes==0 && dia<0)){
+            any--;
+        }
+        return any;
+    }
+    public int totalDias (java.util.Date fecha_inicio, java.util.Date fecha_fin){
+        return (int) ((fecha_fin.getTime()-fecha_inicio.getTime())/86400000);
+    }
+
+    public void insertarNomina(int id, String dni_empleado, String nombre, String apellidos, String grupo_profesional, int grupo_cotizacion, String num_ss_empleado,
+                               double irpf, int ccc_de_ss, Date fecha_inicio_nomina,
+                               Date fecha_final_nomina, int total_dias, double salario_bruto, double horas_extra_fm, double horas_extra_resto,
+                               double horas_complementarias, double contingencias_comunes, double total_devengo, double total_a_deducir, double total_a_percibir
+            , double antiguedad , double fp ) throws SQLException {
+
+        Statement insert = conn.createStatement();
+        insert.executeUpdate("INSERT INTO `bq7xcggx4wgir1svxet5`.`historial_nominas` (`id`, `dni_empleado`, `nombre`, `apellidos`, `grupo_profesional`, `grupo_cotzacion`, `num_ss_empleado`, `irpf`, `fecha_inicio_nomina`, `fecha_final_nomina`," +
+                " `total_dias`, `salario_bruto`,`ccc_de_ss`, `horas_extra_fm`, `horas_extra_resto`, `horas_complemetarias`, `antiguedad`, `formacion_porfesional`, `contingencias_comunes`, `total_devengo`, `total_a_deducir`, `total_a_percibir`) VALUES ('"+id+"', '"+dni_empleado+"', " +
+                "'"+nombre+"', '"+apellidos+"', '"+grupo_profesional+"', '"+grupo_cotizacion+"', '"+num_ss_empleado+"', '"+irpf+"', '"+fecha_inicio_nomina+"', '"+fecha_final_nomina+"', '"+total_dias+"', '"+salario_bruto+"', '"+ccc_de_ss+"', '"+horas_extra_fm+"', '"+horas_extra_resto+"', '"+horas_complementarias+"'" +
+                ", '"+antiguedad+"', '"+fp+"', '"+contingencias_comunes+"', '"+total_devengo+"', '"+total_a_deducir+"', '"+total_a_percibir+"');");
+    }
+
+    public int obtenirNouIDNomina() throws Exception {
+        Statement cercaMaxId = conn.createStatement();
+        ResultSet r = cercaMaxId.executeQuery("SELECT MAX(ID) FROM historial_nominas");
+        if (r.next()) return (1 + r.getInt(1));
+        else return 1;
     }
 
     /////////////////////////////////////////////////// GETERS-Convenios ///////////////////////////////////////////////
@@ -129,6 +173,23 @@ public class Engine {
         resultQuery.next();
         precioHora = resultQuery.getInt("precio_hc");
         return precioHora;
+    }
+
+    public double antiguedad(int id_convenio) throws SQLException {
+        Statement hora = conn.createStatement();
+        double antiguedad;
+        ResultSet resultQuery = hora.executeQuery("SELECT antiguedad FROM convenios WHERE id=" + id_convenio + "");
+        resultQuery.next();
+        antiguedad = resultQuery.getDouble("antiguedad");
+        return antiguedad;
+    }
+    public double fp(int id_convenio) throws SQLException {
+        Statement hora = conn.createStatement();
+        double fp;
+        ResultSet resultQuery = hora.executeQuery("SELECT porcentaje_fp FROM convenios WHERE id=" + id_convenio + "");
+        resultQuery.next();
+        fp = resultQuery.getInt("porcentaje_fp");
+        return fp;
     }
 
 
@@ -175,12 +236,12 @@ public class Engine {
         return direc;
     }
 
-    public int getNum_ss(String dni) throws SQLException {
+    public String getNum_ss(String dni) throws SQLException {
         Statement st = conn.createStatement();
-        int num_ss;
+        String num_ss;
         ResultSet resultQuery = st.executeQuery("SELECT num_ss FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
-        num_ss = resultQuery.getInt("num_ss");
+        num_ss = resultQuery.getString("num_ss");
         return num_ss;
     }
 
@@ -199,6 +260,15 @@ public class Engine {
         ResultSet resultQuery = st.executeQuery("SELECT fecha_contratacion FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
         fecha = resultQuery.getDate("fecha_contratacion");
+        return fecha;
+    }
+    public java.util.Date getFecha_Contrata_Date(String dni) throws SQLException {
+        Statement st = conn.createStatement();
+        java.sql.Date fecha;
+        ResultSet resultQuery = st.executeQuery("SELECT fecha_contratacion FROM empleados WHERE dni='" + dni + "'");
+        resultQuery.next();
+        fecha = resultQuery.getDate("fecha_contratacion");
+
         return fecha;
     }
 
@@ -230,12 +300,12 @@ public class Engine {
 
     }
 
-    public String getGrupo_cotizacion(String dni) throws SQLException {
+    public int getGrupo_cotizacion(String dni) throws SQLException {
         Statement st = conn.createStatement();
-        String grcot;
+        int grcot;
         ResultSet resultQuery = st.executeQuery("SELECT grupo_cotizacion  FROM empleados WHERE dni='" + dni + "'");
         resultQuery.next();
-        grcot = resultQuery.getString("grupo_cotizacion");
+        grcot = resultQuery.getInt("grupo_cotizacion");
         return grcot;
 
     }
@@ -248,7 +318,7 @@ public class Engine {
         String catpr;
         ResultSet resultQuery = st.executeQuery("SELECT categorias_profesionales  FROM base_cotizacion WHERE id=" + id + "");
         resultQuery.next();
-        catpr = resultQuery.getString("grupo_cotizacion");
+        catpr = resultQuery.getString("categorias_profesionales");
         return catpr;
     }
 
@@ -279,7 +349,7 @@ public class Engine {
         String cif;
         ResultSet resultQuery = st.executeQuery("SELECT cif  FROM empresa WHERE nombre_empresa='" + nombre_empresa + "'");
         resultQuery.next();
-        cif = resultQuery.getString("grupo_cotizacion");
+        cif = resultQuery.getString("cif");
         return cif;
     }
 
@@ -288,7 +358,7 @@ public class Engine {
         String ne;
         ResultSet resultQuery = st.executeQuery("SELECT nombre_empresa  FROM empresa WHERE cif='" + cif + "'");
         resultQuery.next();
-        ne = resultQuery.getString("grupo_cotizacion");
+        ne = resultQuery.getString("nombre_empresa");
         return ne;
     }
 
@@ -297,7 +367,7 @@ public class Engine {
         String gd;
         ResultSet resultQuery = st.executeQuery("SELECT domicilo  FROM empresa WHERE cif='" + cif + "'");
         resultQuery.next();
-        gd = resultQuery.getString("grupo_cotizacion");
+        gd = resultQuery.getString("domicilo");
         return gd;
     }
     public String getLocalidad(String cif) throws SQLException {
@@ -305,40 +375,29 @@ public class Engine {
         String gL;
         ResultSet resultQuery = st.executeQuery("SELECT localidad  FROM empresa WHERE cif='" + cif + "'");
         resultQuery.next();
-        gL = resultQuery.getString("grupo_cotizacion");
+        gL = resultQuery.getString("localidad");
         return gL;
     }
-    public int getCcc_ss(String nombre_empresa) throws SQLException {
+    public int getCcc_ss(String cif) throws SQLException {
         Statement st = conn.createStatement();
         int ccc_ss;
-        ResultSet resultQuery = st.executeQuery("SELECT ccc_ss  FROM empresa WHERE nombre_empresa='" + nombre_empresa + "'");
+        ResultSet resultQuery = st.executeQuery("SELECT ccc_ss  FROM empresa WHERE cif='" + cif + "'");
         resultQuery.next();
-        ccc_ss = resultQuery.getInt("grupo_cotizacion");
+        ccc_ss = resultQuery.getInt("ccc_ss");
         return ccc_ss;
     }
 
-    /////////////////////////////////// GETERS-tipos_cotizacion_porcentual ////////////////////////////////////////////
-
-
-    public String getContingencias(String contigencias) throws SQLException {
-        Statement st = conn.createStatement();
-        String cont;
-        ResultSet resultQuery = st.executeQuery("SELECT contingencias FROM tipos_cotizacion_porcentual WHERE contingencias='" + contigencias + "'");
-        resultQuery.next();
-        cont = resultQuery.getString("grupo_cotizacion");
-        return cont;
-    }
-
-    public double getTotal(String contigencias) throws SQLException {
-        Statement st = conn.createStatement();
-        Double tot;
-        ResultSet resultQuery = st.executeQuery("SELECT total FROM tipos_cotizacion_porcentual WHERE contingencias='" + contigencias + "'");
-        resultQuery.next();
-        tot = resultQuery.getDouble("grupo_cotizacion");
-        return tot;
-    }
 
     ///////////////////////////////////////////////// GETERS-Deducciones ///////////////////////////////////////////////
+
+    public int getId_deducciones(int id_convenio) throws SQLException {
+        Statement st = conn.createStatement();
+        int phefm;
+        ResultSet resultQuery = st.executeQuery("SELECT porce_hefm FROM deducciones WHERE id_convenio=" + id_convenio + "");
+        resultQuery.next();
+        phefm = resultQuery.getInt("porce_hefm");
+        return phefm;
+    }
 
     public int getPorcentaje_hefm(int id_convenio) throws SQLException {
         Statement st = conn.createStatement();
@@ -356,6 +415,17 @@ public class Engine {
         pher = resultQuery.getInt("porce_her");
         return pher;
     }
+
+    public int getContingenciasCom(int id_convenio) throws SQLException {
+        Statement st = conn.createStatement();
+        int pher;
+        ResultSet resultQuery = st.executeQuery("SELECT porce_her FROM deducciones WHERE id_convenio=" + id_convenio + "");
+        resultQuery.next();
+        pher = resultQuery.getInt("porce_her");
+        return pher;
+    }
+
+
 
 //////////////////////////////////////////////////// Calculos //////////////////////////////////////////////////////////
 
@@ -379,13 +449,16 @@ public class Engine {
     public double formacionProfesional(double porc_x, double cc,double hefm, double her, double hc){
         return  (porc_x*(cc+hefm+her+hc))/100;
     }
-    public double IRPF(double por_y, double totdeven){
-        return  ((por_y*totdeven)/100);
-    }
-    public double totalaDeducir(double cc, double fp,double hefm, double her){
-        return  cc+fp+hefm+her;
+
+    public double totalaDeducir(double fp,double hefm, double her){
+        return  fp+hefm+her;
     }
     public double liquidoaPercibir(double totDev, double totADed){
         return totDev-totADed;
     }
+
+    public double cobradoAntiguedad(int anyosEmpl, double precioAnyo){
+        return anyosEmpl * precioAnyo;
+    }
+
 }

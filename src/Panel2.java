@@ -12,10 +12,57 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.List;
 
 public class Panel2 extends JFrame{
 
+
 	public JFrame frame;
+	JLabel id_nomina_hn;
+	JLabel liquido_t_percibir_r;
+	JLabel contingencias_p;
+	JLabel contingencias_e;
+	JLabel formacion_profesional_p;
+	JLabel formacion_profesional_e;
+	JLabel irpf_p;
+	JLabel irpf_e;
+	JLabel total_a_deducir_precio;
+	JLabel salario_base_r;
+	JLabel hefm_r;
+	JLabel horas_extras_resto_r;
+	JLabel horas_compl_r;
+	JLabel antiguedad_r;
+	JLabel total_devengos_r;
+	JLabel periodo_de_liquidacion_diai;
+	JLabel periodo_de_liquidacion_mesi;
+	JLabel periodo_de_liquidacion_anyo1;
+	JLabel periodo_de_liquidacion_diaf;
+	JLabel periodo_de_liquidacion_mesf;
+	JLabel periodo_de_liquidacion_anyof;
+	JLabel total_dias_r;
+	JLabel nombre_empresa_r;
+	JLabel domicilio_r;
+	JLabel localidad_r;
+	JLabel cif_r;
+	JLabel ccc_ss_r;
+	JLabel dni_r;
+	JLabel nombre_apellidos_concat_r;
+	JLabel grupo_profesional_r;
+	JLabel grupo_cotizacion_r;
+	JLabel num_de_ss_r;
+
+
+
+
+	private List<Nomina> result;
+	Engine engine = new Engine();
+	private  Nomina nomina;
+	String chosenName;
+	int entradas = 0;
+	int indiceActualEntrada;
+	javax.swing.ImageIcon icon = new javax.swing.ImageIcon("src\\recursos\\cidenb.png");
+	javax.swing.ImageIcon cidexnb = new javax.swing.ImageIcon("src\\recursos\\cidenb2.png");
+
 
 	/**
 	 * Launch the application.
@@ -24,7 +71,9 @@ public class Panel2 extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					int lastIdNom=engine.obtenerUltimoId();
 					Panel2 windows = new Panel2();
+					windows.cargarNomina(lastIdNom);
 					windows.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +85,7 @@ public class Panel2 extends JFrame{
 	/**
 	 * Create the application.
 	 */
-	public Panel2() {
+	public Panel2() throws Exception {
 		this.getContentPane().setBackground(getBackground());
 		this.setLocationRelativeTo(null);
 		this.setTitle("Nomina Generado");
@@ -48,14 +97,15 @@ public class Panel2 extends JFrame{
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(400, 0, 650, 800);
+		frame.setBounds(400, 0, 950, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JLabel icono = new JLabel(icon,javax.swing.SwingConstants.LEFT);
 
-		JLabel titulo = new JLabel("NOMINABALEAR");
+		JLabel titulo = new JLabel(cidexnb);
 
 		JLabel id_nomina = new JLabel("ID Nomina");
 
-		JLabel id_nomina_hn = new JLabel("000000000000000");
+		id_nomina_hn = new JLabel("000000000000000");
 
 		JPanel panel = new JPanel();
 
@@ -144,7 +194,7 @@ public class Panel2 extends JFrame{
 		JLabel liquido_t_percibir = new JLabel("LIQUIDO TOTAL A PERCIBIR: ");
 		panel_5.add(liquido_t_percibir, "cell 0 0");
 
-		JLabel liquido_t_percibir_r = new JLabel("000000.00");
+		liquido_t_percibir_r = new JLabel("000000.00");
 		panel_5.add(liquido_t_percibir_r, "cell 1 0");
 
 		JLabel liquido_t_percibir_eur = new JLabel("€€");
@@ -156,34 +206,34 @@ public class Panel2 extends JFrame{
 		JLabel contingencias = new JLabel("Contingencias Comunes: ");
 		panel_4.add(contingencias, "cell 0 0");
 
-		JLabel contingencias_p = new JLabel("porcentaje");
+		contingencias_p = new JLabel("porcentaje");
 		panel_4.add(contingencias_p, "cell 1 0");
 
-		JLabel contingencias_e = new JLabel("euros");
+		contingencias_e = new JLabel("euros");
 		panel_4.add(contingencias_e, "cell 2 0");
 
 		JLabel formacion_profesional = new JLabel("Formacion Profesional");
 		panel_4.add(formacion_profesional, "cell 0 1");
 
-		JLabel formacion_profesional_p = new JLabel("porcentaje");
+		formacion_profesional_p = new JLabel("porcentaje");
 		panel_4.add(formacion_profesional_p, "cell 1 1");
 
-		JLabel formacion_profesional_e = new JLabel("euros");
+		formacion_profesional_e = new JLabel("euros");
 		panel_4.add(formacion_profesional_e, "cell 2 1");
 
 		JLabel irpf = new JLabel("IRPF");
 		panel_4.add(irpf, "cell 0 3");
 
-		JLabel irpf_p = new JLabel("porcentaje");
+		irpf_p = new JLabel("porcentaje");
 		panel_4.add(irpf_p, "cell 1 3");
 
-		JLabel irpf_e = new JLabel("euros");
+		irpf_e = new JLabel("euros");
 		panel_4.add(irpf_e, "cell 2 3");
 
 		JLabel total_a_deducir = new JLabel("Total a Deducir");
 		panel_4.add(total_a_deducir, "cell 0 4");
 
-		JLabel total_a_deducir_precio = new JLabel("00000000000");
+		total_a_deducir_precio = new JLabel("00000000000");
 		panel_4.add(total_a_deducir_precio, "cell 1 4");
 
 		JLabel lblNewLabel_8_1_1_1_14 = new JLabel("");
@@ -195,37 +245,37 @@ public class Panel2 extends JFrame{
 		JLabel salario_base = new JLabel("Salario base: ");
 		panel_3.add(salario_base, "cell 0 0");
 
-		JLabel salario_base_r = new JLabel("0000.00");
+		salario_base_r = new JLabel("0000.00");
 		panel_3.add(salario_base_r, "cell 1 0");
 
 		JLabel hefm = new JLabel("Horas Extra Fuerza Mayor: ");
 		panel_3.add(hefm, "cell 0 1");
 
-		JLabel hefm_r = new JLabel("0000");
+		hefm_r = new JLabel("0000");
 		panel_3.add(hefm_r, "cell 1 1");
 
 		JLabel horas_extras_resto = new JLabel("Horas Extras Resto");
 		panel_3.add(horas_extras_resto, "cell 0 2");
 
-		JLabel horas_extras_resto_r = new JLabel("0000000");
+		horas_extras_resto_r = new JLabel("0000000");
 		panel_3.add(horas_extras_resto_r, "cell 1 2");
 
 		JLabel horas_compl = new JLabel("Horas Complementarias: ");
 		panel_3.add(horas_compl, "cell 0 3");
 
-		JLabel horas_compl_r = new JLabel("000000000");
+		horas_compl_r = new JLabel("000000000");
 		panel_3.add(horas_compl_r, "cell 1 3");
 
 		JLabel antiguedad = new JLabel("Antiguedad");
 		panel_3.add(antiguedad, "cell 0 4");
 
-		JLabel antiguedad_r = new JLabel("00000000");
+		antiguedad_r = new JLabel("00000000");
 		panel_3.add(antiguedad_r, "cell 1 4");
 
 		JLabel total_devengos = new JLabel("Total Devengado: ");
 		panel_3.add(total_devengos, "cell 0 5");
 
-		JLabel total_devengos_r = new JLabel("000000"); //Total de devengado
+		total_devengos_r = new JLabel("000000"); //Total de devengado
 		panel_3.add(total_devengos_r, "cell 1 5");
 		panel_2.setLayout(new MigLayout("", "[75.00][][][][][][][][][][][45.00][][59.00][][][]", "[]"));
 
@@ -238,31 +288,31 @@ public class Panel2 extends JFrame{
 		JLabel periodo_de_liquidacion_del = new JLabel("del");
 		panel_2.add(periodo_de_liquidacion_del, "cell 3 0");
 
-		JLabel periodo_de_liquidacion_diai = new JLabel("00");
+		periodo_de_liquidacion_diai = new JLabel("00");
 		panel_2.add(periodo_de_liquidacion_diai, "cell 5 0");
 
-		JLabel periodo_de_liquidacion_mesi = new JLabel("00");
+		periodo_de_liquidacion_mesi = new JLabel("00");
 		panel_2.add(periodo_de_liquidacion_mesi, "cell 6 0");
 
-		JLabel periodo_de_liquidacion_anyo1 = new JLabel("0000");
+		periodo_de_liquidacion_anyo1 = new JLabel("0000");
 		panel_2.add(periodo_de_liquidacion_anyo1, "cell 7 0");
 
 		JLabel periodo_de_liquidacion_al = new JLabel("al");
 		panel_2.add(periodo_de_liquidacion_al, "cell 9 0");
 
-		JLabel periodo_de_liquidacion_diaf = new JLabel("00");
+		periodo_de_liquidacion_diaf = new JLabel("00");
 		panel_2.add(periodo_de_liquidacion_diaf, "cell 10 0");
 
-		JLabel periodo_de_liquidacion_mesf = new JLabel("00");
+		periodo_de_liquidacion_mesf = new JLabel("00");
 		panel_2.add(periodo_de_liquidacion_mesf, "cell 11 0");
 
-		JLabel periodo_de_liquidacion_anyof = new JLabel("0000");
+		periodo_de_liquidacion_anyof = new JLabel("0000");
 		panel_2.add(periodo_de_liquidacion_anyof, "cell 12 0");
 
 		JLabel total_dias = new JLabel("Total de dias: ");
 		panel_2.add(total_dias, "cell 14 0");
 
-		JLabel total_dias_r = new JLabel("00");
+		total_dias_r = new JLabel("00");
 		panel_2.add(total_dias_r, "cell 16 0");
 
 		//------------------------------------------------------------------------------------------------------------
@@ -339,4 +389,50 @@ public class Panel2 extends JFrame{
 		panel.add(num_de_ss_r, "cell 2 5");
 		frame.getContentPane().setLayout(groupLayout);
 	}
+	public void cargarNomina(int id_nom){
+		try {
+			result = engine.getLastNomina(id_nom);
+			entradas = result.size();
+			if (entradas != 0){
+				indiceActualEntrada = 0;
+				nomina = result.get(indiceActualEntrada);
+				id_nomina_hn.setText(""+nomina.getId());
+				liquido_t_percibir_r.setText(""+nomina.getTotal_a_percibir());
+				contingencias_p.setText(""+engine.getContingenciasCom(engine.getId_convenio(nomina.getDni_empleado()))+"%");
+				contingencias_e.setText(""+nomina.getContingencias_comunes()+"€");
+				formacion_profesional_p.setText(""+engine.fp(engine.getId_convenio(nomina.getDni_empleado()))+"%");
+				formacion_profesional_e.setText(""+nomina.getFormacion_profesional()+"€");
+				irpf_p.setText(""+engine.getIrpf(nomina.getDni_empleado())+"%");
+				irpf_e.setText(""+nomina.getIrpf()+"€");
+				total_a_deducir_precio.setText(""+nomina.getTotal_a_deducir()+"€");
+				salario_base_r.setText(""+nomina.getSalario_bruto()+"€");
+				hefm_r.setText(""+nomina.getHoras_extra_fm()+"€");
+				horas_extras_resto_r.setText(""+nomina.getHoras_extra_resto()+"€");
+				horas_compl_r.setText(""+nomina.getHoras_complementarias()+"€");
+				antiguedad_r.setText(""+nomina.getAntiguedad()+"€");
+				total_devengos_r.setText(""+nomina.getTotal_devengo()+"€");
+				periodo_de_liquidacion_diai.setText(""+nomina.getFecha_inicio_nomina());
+				periodo_de_liquidacion_mesi.setText("");
+				periodo_de_liquidacion_anyo1.setText("");
+				periodo_de_liquidacion_diaf.setText(""+nomina.getFecha_final_nomina());
+				periodo_de_liquidacion_mesf.setText("");
+				periodo_de_liquidacion_anyof.setText("");
+				total_dias_r.setText(""+nomina.getTotal_dias()+" dias");
+				nombre_empresa_r.setText(""+nomina.getNombre_empresa());
+				domicilio_r.setText(""+nomina.getDomicilio());
+				localidad_r.setText(""+nomina.getLocalidad());
+				cif_r.setText(""+nomina.getCif());
+				ccc_ss_r.setText(""+nomina.getCcc_de_ss());
+				dni_r.setText(""+nomina.getDni_empleado());
+				nombre_apellidos_concat_r.setText(""+nomina.getNombre()+" "+nomina.getApellidos());
+				grupo_profesional_r.setText(""+nomina.getGrupo_profesional());
+				grupo_cotizacion_r.setText(""+nomina.getGrupo_cotizacion());
+				num_de_ss_r.setText(""+nomina.getNum_ss_empleado());
+			}
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+
+
 }

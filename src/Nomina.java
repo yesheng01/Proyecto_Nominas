@@ -1,4 +1,8 @@
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.sql.*;
 
@@ -9,7 +13,7 @@ public class Nomina {
     private String nombre;
     private String apellidos;
     private String grupo_profesional;
-    private String grupo_cotizacion;
+    private int grupo_cotizacion;
     private String num_ss_empleado;
     private double irpf;
     private String nombre_empresa;
@@ -21,23 +25,22 @@ public class Nomina {
     private java.sql.Date fecha_final_nomina;
     private int  total_dias;
     private double salario_bruto;
-    private double total;
     private double horas_extra_fm;
     private double horas_extra_resto;
     private double horas_complementarias;
     private double contingencias_comunes;
     private double antiguedad;
-    private double desempleo;
+    private double formacion_profesional;
     private double total_devengo;
     private double total_a_deducir;
     private double total_a_percibir;
 
 
-    public Nomina(int id, String dni_empleado, String nombre, String apellidos, String grupo_profesional, String grupo_cotizacion, String num_ss_empleado,
+    public Nomina(int id, String dni_empleado, String nombre, String apellidos, String grupo_profesional, int grupo_cotizacion, String num_ss_empleado,
                   double irpf, String nombre_empresa, String cif, String domicilio, int ccc_de_ss, String localidad, Date fecha_inicio_nomina,
-                  Date fecha_final_nomina, int total_dias, double salario_bruto, double total, double horas_extra_fm, double horas_extra_resto,
-                  double horas_complementarias, double contingencias_comunes, double desempleo, double total_devengo, double total_a_deducir, double total_a_percibir
-                  , double antiguedad  ) {
+                  Date fecha_final_nomina, int total_dias, double salario_bruto, double horas_extra_fm, double horas_extra_resto,
+                  double horas_complementarias, double contingencias_comunes, double total_devengo, double total_a_deducir, double total_a_percibir
+                  , double antiguedad,double formacion_profesional  ) {
         setId(id);
         setDni_empleado(dni_empleado);
         setNombre(nombre);
@@ -55,17 +58,15 @@ public class Nomina {
         setFecha_final_nomina(fecha_final_nomina);
         setTotal_dias(total_dias);
         setSalario_bruto(salario_bruto);
-        setTotal(total);
         setHoras_extra_fm(horas_extra_fm);
         setHoras_extra_resto(horas_extra_resto);
         setHoras_complementarias(horas_complementarias);
         setContingencias_comunes(contingencias_comunes);
-        setDesempleo(desempleo);
         setTotal_devengo(total_devengo);
         setTotal_a_deducir(total_a_deducir);
         setTotal_a_percibir(total_a_percibir);
         setAntiguedad(antiguedad);
-
+        setFormacion_profesional(formacion_profesional);
     }
 
 
@@ -89,7 +90,7 @@ public class Nomina {
         return grupo_profesional;
     }
 
-    public String getGrupo_cotizacion() {
+    public int getGrupo_cotizacion() {
         return grupo_cotizacion;
     }
 
@@ -129,6 +130,14 @@ public class Nomina {
         return fecha_final_nomina;
     }
 
+    public double getFormacion_profesional() {
+        return formacion_profesional;
+    }
+
+    public void setFormacion_profesional(double formacion_profesional) {
+        this.formacion_profesional = formacion_profesional;
+    }
+
     public int getTotal_dias() {
         return total_dias;
     }
@@ -137,9 +146,6 @@ public class Nomina {
         return salario_bruto;
     }
 
-    public double getTotal() {
-        return total;
-    }
 
     public double getHoras_extra_fm() {
         return horas_extra_fm;
@@ -156,11 +162,6 @@ public class Nomina {
     public double getContingencias_comunes() {
         return contingencias_comunes;
     }
-
-    public double getDesempleo() {
-        return desempleo;
-    }
-
 
     public double getTotal_devengo() {
         return total_devengo;
@@ -198,7 +199,7 @@ public class Nomina {
         this.grupo_profesional = grupo_profesional;
     }
 
-    public void setGrupo_cotizacion(String grupo_cotizacion) {
+    public void setGrupo_cotizacion(int grupo_cotizacion) {
         this.grupo_cotizacion = grupo_cotizacion;
     }
 
@@ -246,10 +247,6 @@ public class Nomina {
         this.salario_bruto = salario_bruto;
     }
 
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
     public void setHoras_extra_fm(double horas_extra_fm) {
         this.horas_extra_fm = horas_extra_fm;
     }
@@ -266,9 +263,6 @@ public class Nomina {
         this.contingencias_comunes = contingencias_comunes;
     }
 
-    public void setDesempleo(double desempleo) {
-        this.desempleo = desempleo;
-    }
 
     public void setTotal_devengo(double total_devengo) {
         this.total_devengo = total_devengo;
@@ -284,5 +278,63 @@ public class Nomina {
 
     public void setAntiguedad(double antiguedad) {
         this.antiguedad = antiguedad;
+    }
+
+    public void createXml(){
+        BufferedWriter bw = null;
+        try {
+            String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+                    "<nomina>\n" +
+                    "<id>" + getId() + "</id>\n" +
+                    "<dni_empleado>"+getDni_empleado()+"</dni_empleado>\n" +
+                    "<nombre>"+getNombre()+"</nombre>\n" +
+                    "<apellidos>"+getApellidos()+"</apellidos>\n" +
+                    "<grupo_profesional>" +getGrupo_profesional()+ "</grupo_profesional>\n" +
+                    "<grupo_cotizacion>"+getGrupo_cotizacion()+ "</grupo_cotizacion>\n" +
+                    "<num_ss_emplado>"+getNum_ss_empleado()+"</num_ss_emplado>\n" +
+                    "<irpf>" +getIrpf()+"</irpf>\n" +
+                    "<nombre_empresa>" + getNombre_empresa()  +"</nombre_empresa>\n" +
+                    "<cif>" +getCif() +"</cif>\n" +
+                    "<domicilio>" + getDomicilio() +"</domicilio>\n" +
+                    "<ccc_de_ss>"+ getCcc_de_ss() +"</ccc_de_ss>\n" +
+                    "<localidad>" +getLocalidad() +"</localidad>\n" +
+                    "<fecha_inicio_nomina>"+getFecha_inicio_nomina()+"</fecha_inicio_nomina>\n" +
+                    "<fecha_final_nomina>"+getFecha_final_nomina() +"</fecha_final_nomina>\n" +
+                    "<total_dias>"+ getTotal_dias() +"</total_dias>\n" +
+                    "<salario_bruto>"+getSalario_bruto()+"</salario_bruto>\n" +
+                    "<horas_extra_fm>"+getHoras_extra_fm()+"</horas_extra_fm>\n" +
+                    "<horas_extra_resto>"+getHoras_extra_resto()+"</horas_extra_resto>\n" +
+                    "<horas_complementarias>"+getHoras_complementarias()+"</horas_complementarias>\n" +
+                    "<contingencias_comunes>"+getContingencias_comunes()+"</contingencias_comunes>\n" +
+                    "<antiguedad>"+getAntiguedad()+"</antiguedad>\n" +
+                    "<total_devengo>"+getTotal_devengo()+"</total_devengo>\n" +
+                    "<total_a_deducir>"+getTotal_a_deducir()+"</total_a_deducir>\n" +
+                    "<total_a_percibir>"+getTotal_a_percibir()+"</total_a_percibir>\n" +
+                    "</nomina>";
+            //Ruta
+            String path = "src\\xml\\";
+            //Nombre del fichero
+            String filename = "nomina_"+getId()+"_"+getFecha_final_nomina().toString()+ ".xml";
+            File file = new File(path + filename);
+
+            /* This logic will make sure that the file
+             * gets created if it is not present at the
+             * specified location*/
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file);
+            bw = new BufferedWriter(fw);
+            bw.write(xml);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (bw != null)
+                    bw.close();
+            } catch (Exception ex) {
+                System.out.println("Error in closing the BufferedWriter" + ex);
+            }
+        }
     }
 }

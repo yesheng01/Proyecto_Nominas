@@ -17,15 +17,17 @@ public class Empleado {
     private String apellidos;
     private String aelectronica;
     private String direccion;
+    private int id_convenio;
 
 
-    public Empleado(int i, String d, String n, String ap, String ae, String dir){
+    public Empleado(int i, String d, String n, String ap, String ae, String dir,int id_convenio){
         setId(i);
         setDni(d);
         setNom(n);
         setApellidos(ap);
         setAelectronica(ae);
         setDireccion(dir);
+        setId_convenio(id_convenio);
     }
 
     public int getId() {
@@ -75,5 +77,13 @@ public class Empleado {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public int getId_convenio() {
+        return id_convenio;
+    }
+
+    public void setId_convenio(int id_convenio) {
+        this.id_convenio = id_convenio;
     }
 }

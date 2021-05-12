@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nomina>
+<id>6</id>
+<dni_empleado>84671254E</dni_empleado>
+<nombre>Francisco</nombre>
+<apellidos>Gonzalez Miro</apellidos>
+<grupo_profesional>Auxiliar Administrativo</grupo_profesional>
+<grupo_cotizacion>7</grupo_cotizacion>
+<num_ss_emplado>567531546874</num_ss_emplado>
+<irpf>312.0</irpf>
+<nombre_empresa>NominaBalear</nombre_empresa>
+<cif>A58818501</cif>
+<domicilio> Carrer de Pérez Galdós, 19, Llevant (Palma de Mallorca)</domicilio>
+<ccc_de_ss>1123456742</ccc_de_ss>
+<localidad>Palma de Mallorca, España</localidad>
+<fecha_inicio_nomina>2021-05-05</fecha_inicio_nomina>
+<fecha_final_nomina>2021-06-06</fecha_final_nomina>
+<total_dias>32</total_dias>
+<salario_bruto>1190.0</salario_bruto>
+<horas_extra_fm>240.0</horas_extra_fm>
+<horas_extra_resto>100.0</horas_extra_resto>
+<horas_complementarias>100.0</horas_complementarias>
+<contingencias_comunes>860.0</contingencias_comunes>
+<antiguedad>50.0</antiguedad>
+<total_devengo>1300.0</total_devengo>
+<total_a_deducir>126.6</total_a_deducir>
+<total_a_percibir>1173.4</total_a_percibir>
+</nomina>

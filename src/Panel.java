@@ -23,15 +23,19 @@ public class Panel extends JFrame {
 	private JTextField lastname;
 	private JTextField email;
 	private JTextField direccion;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
+	private JTextField dia_i_r;
+	private JTextField dia_i_f;
+	private JTextField mes_i_r;
+	private JTextField mes_i_f;
+	private JTextField any_i_r;
+	private JTextField any_i_f;
+	private JTextField hefm_r;
+	private JTextField her_r;
+	private JTextField hc_r;
+	private JLabel hefm;
+	private JLabel her;
+	private JLabel hc;
+
 	private JComboBox<String> comboBox;
 	private List<Empleado> result;
 	Engine engine = new Engine();
@@ -39,6 +43,7 @@ public class Panel extends JFrame {
 	String chosenName;
 	int entradas = 0;
 	int indiceActualEntrada;
+	javax.swing.ImageIcon cidexnb = new javax.swing.ImageIcon("src\\recursos\\cidenb2.png");
 	/**
 	 * Launch the application.
 	 */
@@ -77,8 +82,8 @@ public class Panel extends JFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		
-		label_Titulo = new JLabel("NOMINABALEAR");
-		label_Titulo.setFont(new Font("Monospaced", Font.PLAIN, 13));
+		label_Titulo = new JLabel(cidexnb);
+
 		
 		JLabel dni_o_nif = new JLabel("DNI o NIF");
 		
@@ -125,49 +130,186 @@ public class Panel extends JFrame {
 		JLabel fecha_final = new JLabel("Fecha Final:");
 		
 		JLabel dia_i = new JLabel("dia");
-		
 		JLabel dia_f = new JLabel("dia");
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		
+		dia_i_r = new JTextField();
+		dia_i_r.setColumns(10);
+		dia_i_r.addKeyListener(new KeyAdapter()
+		{
+			public void keyTyped(KeyEvent e)
+			{
+				char caracter = e.getKeyChar();
+
+				// Verificar si la tecla pulsada no es un digito
+				if(((caracter < '0') ||
+						(caracter > '9')) &&
+						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+				{
+					e.consume();  // ignorar el evento de teclado
+				}
+			}
+		});
+
+
+		dia_i_f = new JTextField();
+		dia_i_f.setColumns(10);
+		dia_i_f.addKeyListener(new KeyAdapter()
+		{
+			public void keyTyped(KeyEvent e)
+			{
+				char caracter = e.getKeyChar();
+
+				// Verificar si la tecla pulsada no es un digito
+				if(((caracter < '0') ||
+						(caracter > '9')) &&
+						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+				{
+					e.consume();  // ignorar el evento de teclado
+				}
+			}
+		});
+
+
 		JLabel mes_i = new JLabel("mes");
-		
 		JLabel mes_f = new JLabel("mes");
-		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		
+
+		mes_i_r = new JTextField();
+		mes_i_r.setColumns(10);
+		mes_i_r.addKeyListener(new KeyAdapter()
+		{
+			public void keyTyped(KeyEvent e)
+			{
+				char caracter = e.getKeyChar();
+
+				// Verificar si la tecla pulsada no es un digito
+				if(((caracter < '0') ||
+						(caracter > '9')) &&
+						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+				{
+					e.consume();  // ignorar el evento de teclado
+				}
+			}
+		});
+
+
+		mes_i_f = new JTextField();
+		mes_i_f.setColumns(10);
+		mes_i_f.addKeyListener(new KeyAdapter()
+		{
+			public void keyTyped(KeyEvent e)
+			{
+				char caracter = e.getKeyChar();
+
+				// Verificar si la tecla pulsada no es un digito
+				if(((caracter < '0') ||
+						(caracter > '9')) &&
+						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+				{
+					e.consume();  // ignorar el evento de teclado
+				}
+			}
+		});
+
+
 		JLabel any_i = new JLabel("año");
-		
 		JLabel any_f = new JLabel("año");
+
 		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
+		any_i_r = new JTextField();
+		any_i_r.setColumns(10);
+		any_i_r.addKeyListener(new KeyAdapter()
+		{
+			public void keyTyped(KeyEvent e)
+			{
+				char caracter = e.getKeyChar();
+
+				// Verificar si la tecla pulsada no es un digito
+				if(((caracter < '0') ||
+						(caracter > '9')) &&
+						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+				{
+					e.consume();  // ignorar el evento de teclado
+				}
+			}
+		});
 		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
+		any_i_f = new JTextField();
+		any_i_f.setColumns(10);
+		any_i_f.addKeyListener(new KeyAdapter()
+		{
+			public void keyTyped(KeyEvent e)
+			{
+				char caracter = e.getKeyChar();
+
+				// Verificar si la tecla pulsada no es un digito
+				if(((caracter < '0') ||
+						(caracter > '9')) &&
+						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+				{
+					e.consume();  // ignorar el evento de teclado
+				}
+			}
+		});
 		
-		JLabel hefm = new JLabel("Horas Extra Fuerza Mayor: ");
+		hefm = new JLabel("Horas Extra Fuerza Mayor: ");
+
+		her = new JLabel("Horas extra Resto: ");
 		
-		JLabel her = new JLabel("Horas extra Resto: ");
+		hc = new JLabel("Horas Complementarias: ");
 		
-		JLabel hc = new JLabel("Horas Complementarias: ");
+		hefm_r = new JTextField();
+		hefm_r.setColumns(10);
+		hefm_r.addKeyListener(new KeyAdapter()
+		{
+			public void keyTyped(KeyEvent e)
+			{
+				char caracter = e.getKeyChar();
+
+				// Verificar si la tecla pulsada no es un digito
+				if(((caracter < '0') ||
+						(caracter > '9')) &&
+						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+				{
+					e.consume();  // ignorar el evento de teclado
+				}
+			}
+		});
 		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
+		her_r = new JTextField();
+		her_r.setColumns(10);
+		her_r.addKeyListener(new KeyAdapter()
+		{
+			public void keyTyped(KeyEvent e)
+			{
+				char caracter = e.getKeyChar();
+
+				// Verificar si la tecla pulsada no es un digito
+				if(((caracter < '0') ||
+						(caracter > '9')) &&
+						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+				{
+					e.consume();  // ignorar el evento de teclado
+				}
+			}
+		});
 		
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		
-		textField_12 = new JTextField();
-		textField_12.setColumns(10);
+		hc_r = new JTextField();
+		hc_r.setColumns(10);
+		hc_r.addKeyListener(new KeyAdapter()
+		{
+			public void keyTyped(KeyEvent e)
+			{
+				char caracter = e.getKeyChar();
+
+				// Verificar si la tecla pulsada no es un digito
+				if(((caracter < '0') ||
+						(caracter > '9')) &&
+						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+				{
+					e.consume();  // ignorar el evento de teclado
+				}
+			}
+		});
 		
 		JButton generar_button = new JButton("Generar");
 		generar_button.addActionListener(
@@ -232,8 +374,8 @@ public class Panel extends JFrame {
 										.addGroup(groupLayout.createSequentialGroup()
 											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 												.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-													.addComponent(textField_5, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
-													.addComponent(textField_4, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+													.addComponent(dia_i_f, Alignment.LEADING, 0, 0, Short.MAX_VALUE)
+													.addComponent(dia_i_r, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
 												.addComponent(direccion))
 											.addPreferredGap(ComponentPlacement.RELATED))
 										.addComponent(email, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE))
@@ -243,21 +385,21 @@ public class Panel extends JFrame {
 												.addGroup(groupLayout.createSequentialGroup()
 													.addComponent(mes_f)
 													.addPreferredGap(ComponentPlacement.RELATED)
-													.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
+													.addComponent(mes_i_f, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
 												.addGroup(groupLayout.createSequentialGroup()
 													.addComponent(mes_i)
 													.addPreferredGap(ComponentPlacement.RELATED)
-													.addComponent(textField_6, 0, 0, Short.MAX_VALUE)))
+													.addComponent(mes_i_r, 0, 0, Short.MAX_VALUE)))
 											.addPreferredGap(ComponentPlacement.RELATED)
 											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
 												.addGroup(groupLayout.createSequentialGroup()
 													.addComponent(any_i)
 													.addPreferredGap(ComponentPlacement.RELATED)
-													.addComponent(textField_8, 0, 0, Short.MAX_VALUE))
+													.addComponent(any_i_r, 0, 0, Short.MAX_VALUE))
 												.addGroup(groupLayout.createSequentialGroup()
 													.addComponent(any_f)
 													.addPreferredGap(ComponentPlacement.RELATED)
-													.addComponent(textField_9, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))))
+													.addComponent(any_i_f, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))))
 										.addGroup(groupLayout.createSequentialGroup()
 											.addPreferredGap(ComponentPlacement.RELATED)
 											.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
@@ -265,9 +407,9 @@ public class Panel extends JFrame {
 												.addComponent(this.email, GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))))
 									.addPreferredGap(ComponentPlacement.RELATED, 27, Short.MAX_VALUE))
 								.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-									.addComponent(textField_11, Alignment.LEADING)
-									.addComponent(textField_10, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
-								.addComponent(textField_12, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))))
+									.addComponent(her_r, Alignment.LEADING)
+									.addComponent(hefm_r, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+								.addComponent(hc_r, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE))))
 					.addContainerGap())
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap(188, Short.MAX_VALUE)
@@ -301,31 +443,31 @@ public class Panel extends JFrame {
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(fecha_inicial, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 						.addComponent(dia_i)
-						.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(dia_i_r, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(mes_i)
-						.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(mes_i_r, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(any_i)
-						.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(any_i_r, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(fecha_final, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
 						.addComponent(dia_f)
-						.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(dia_i_f, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(mes_f)
-						.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(mes_i_f, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(any_f)
-						.addComponent(textField_9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(any_i_f, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(18)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(hefm, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(hefm_r, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(her, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(her_r, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField_12, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(hc_r, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(hc, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(generar_button, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
@@ -340,7 +482,7 @@ public class Panel extends JFrame {
 		}
 	}
 
-	public void AbrirVentana(ActionEvent evt){
+	public void AbrirVentana(ActionEvent evt) throws Exception {
 		Panel2 form = new Panel2();
 		form.iniciar();
 		this.dispose();
@@ -363,6 +505,48 @@ public class Panel extends JFrame {
 		}catch (Exception e){
 			e.printStackTrace();
 		}
+	}
+	DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+	public java.sql.Date fecha_inicio(ActionEvent evt) throws ParseException {
+		String data=any_i_r.getText()+"/"+mes_i_r.getText()+"/"+dia_i_r.getText();
+		Date date= df.parse(data);
+		return convert(date);
+	}
+	public java.sql.Date fecha_final(ActionEvent evt) throws ParseException {
+		String data=any_i_f.getText()+"/"+mes_i_f.getText()+"/"+dia_i_f.getText();
+		Date date= df.parse(data);
+		return convert(date);
+	}
+
+	public Date fecha_final_date() throws ParseException {
+		String data=any_i_f.getText()+"/"+mes_i_f.getText()+"/"+dia_i_f.getText();
+		return df.parse(data);
+	}
+	public Date fecha_inicio_date() throws ParseException {
+		String data=any_i_r.getText()+"/"+mes_i_r.getText()+"/"+dia_i_r.getText();
+		return df.parse(data);
+	}
+
+
+	private static java.sql.Date convert(java.util.Date uDate) {
+		java.sql.Date sDate = new java.sql.Date(uDate.getTime());
+		return sDate;
+	}
+
+
+	public int hora_efm(ActionEvent evt){
+		String hor = hefm.getText();
+		return Integer.parseInt(hor);
+	}
+	public int hora_er(ActionEvent evt){
+			String hor = her.getText();
+			return Integer.parseInt(hor);
+
+	}
+	public int hora_complemetaria(ActionEvent evt){
+		String hor = hc.getText();
+		return Integer.parseInt(hor);
+
 	}
 
 }
