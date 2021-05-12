@@ -5,7 +5,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JTextField;
 import javax.swing.GroupLayout;
@@ -316,7 +322,39 @@ public class Panel extends JFrame {
 				new ActionListener() {
 					@Override
 					public void actionPerformed(java.awt.event. ActionEvent evt) {
-						AbrirVentana(evt);
+						try {
+							AbrirVentana(evt);
+							int anyosW = engine.calcularAntiguedad(engine.getFecha_Contrata_Date(empleado.getDni()), fecha_final_date());
+							int dias = engine.totalDias(fecha_inicio_date(),fecha_final_date());
+
+							String dni_empl = empleado.getDni();
+							String cif = "A58818501";
+
+							int gethefm_r = Integer.parseInt(hefm_r.getText());
+							int gethcr = Integer.parseInt (hc_r.getText());
+							int gether = Integer.parseInt(her_r.getText());
+							double hefmFin = engine.calcHoras(gethefm_r,engine.selectHorasExtFM(empleado.getId_convenio()));
+							double herFin = engine.calcHoras(gether,engine.selectHorasExtR(empleado.getId_convenio()));
+							double hcFin = engine.calcHoras(gethcr,engine.selectHorasExtR(empleado.getId_convenio()));
+							double hefmP = engine.getPorcentaje_hefm(empleado.getId_convenio());
+							double herP = engine.getPorcentaje_her(empleado.getId_convenio());
+							double prechefm = (hefmP*hefmFin)/100;
+							double precher = (herP*hcFin)/100;
+							double totalDev = engine.totalDevengado(engine.getSueldo_base(dni_empl), gethefm_r, gether , gethcr , engine.antiguedad(empleado.getId_convenio()));
+							double cc = engine.cotingenciasComunes(totalDev,hefmFin ,herFin, hcFin);
+							double irpfdone = (engine.getIrpf(dni_empl)*totalDev)/100;
+
+							double fp = engine.formacionProfesional(engine.fp(empleado.getId_convenio()),cc,hefmFin,herFin,hcFin);
+							double totoalDeduc = engine.totalaDeducir(fp,prechefm, precher);
+							double totoalPerc = engine.liquidoaPercibir(totalDev,totoalDeduc);
+
+							engine.insertarNomina(engine.obtenirNouIDNomina(), dni_empl, empleado.getNom(), empleado.getApellidos(),engine.getGrupo_profesional(dni_empl),engine.getGrupo_cotizacion(dni_empl), engine.getNum_ss(dni_empl),
+									irpfdone,engine.getCcc_ss(cif), fecha_inicio(evt),
+									fecha_final(evt),dias,engine.getSueldo_base(dni_empl),hefmFin, herFin,hcFin,cc,totalDev,totoalDeduc,totoalPerc,engine.cobradoAntiguedad(anyosW,engine.antiguedad(empleado.getId_convenio())),fp);
+
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
 					}
 				}
 		);

@@ -123,6 +123,16 @@ public class Panel2 extends JFrame{
 		JButton generar_pdf_o_csv = new JButton("Generar PDF O CSV");
 
 		JButton generar_xml = new JButton("Generar XML");
+		generar_xml.addActionListener(
+				new ActionListener() {
+					@Override
+					public void actionPerformed(java.awt.event.ActionEvent evt) {
+						nomina.createXml();
+						javax.swing.JOptionPane.showMessageDialog(frame, "DONE!","XML Creado!",javax.swing.JOptionPane.INFORMATION_MESSAGE,icon);
+					}
+				}
+		);
+		add(generar_xml);
 
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
@@ -323,31 +333,31 @@ public class Panel2 extends JFrame{
 		JLabel nombre_empresa = new JLabel("Nombre de Empresa: ");
 		panel_1.add(nombre_empresa, "cell 0 1");
 
-		JLabel nombre_empresa_r = new JLabel("New Label"); //Nombre de empresa
+		nombre_empresa_r = new JLabel("New Label"); //Nombre de empresa
 		panel_1.add(nombre_empresa_r, "cell 2 1");
 
 		JLabel domicilio = new JLabel("Domicilio");
 		panel_1.add(domicilio, "cell 0 2");
 
-		JLabel domicilio_r = new JLabel("New label"); //DOMICILIO DE EMPRESA
+		domicilio_r = new JLabel("New label"); //DOMICILIO DE EMPRESA
 		panel_1.add(domicilio_r, "cell 2 2");
 
 		JLabel localidad = new JLabel("Localidad");
 		panel_1.add(localidad, "cell 0 3");
 
-		JLabel localidad_r = new JLabel("New label"); //Localidad de empresa
+		localidad_r = new JLabel("New label"); //Localidad de empresa
 		panel_1.add(localidad_r, "cell 2 3");
 
 		JLabel cif = new JLabel("CIF");
 		panel_1.add(cif, "cell 0 4");
 
-		JLabel cif_r = new JLabel("New label"); //CIF DE EMPRESA
+		cif_r = new JLabel("New label"); //CIF DE EMPRESA
 		panel_1.add(cif_r, "cell 2 4");
 
 		JLabel ccc_ss = new JLabel("CCC de la SS: ");
 		panel_1.add(ccc_ss, "cell 0 5");
 
-		JLabel ccc_ss_r = new JLabel("New label"); // CCC DE EMPRESA
+		ccc_ss_r = new JLabel("New label"); // CCC DE EMPRESA
 
 
 		//PRIMER PANEL		
@@ -361,31 +371,31 @@ public class Panel2 extends JFrame{
 		JLabel dni = new JLabel("DNI: ");
 		panel.add(dni, "cell 0 1");
 
-		JLabel dni_r = new JLabel("NEW LABEL: "); // ESTO ES EL DNI
+		dni_r = new JLabel("NEW LABEL: "); // ESTO ES EL DNI
 		panel.add(dni_r, "cell 2 1");
 
 		JLabel nombre_apellidos_concat = new JLabel("Nombre y Apellido: ");
 		panel.add(nombre_apellidos_concat, "cell 0 2");
 
-		JLabel nombre_apellidos_concat_r = new JLabel("New label"); // ESTO ES EL NOMBRE Y APELLIDO
+		nombre_apellidos_concat_r = new JLabel("New label"); // ESTO ES EL NOMBRE Y APELLIDO
 		panel.add(nombre_apellidos_concat_r, "cell 2 2");
 
 		JLabel grupo_profesional = new JLabel("Grupo Profesional: ");
 		panel.add(grupo_profesional, "cell 0 3");
 
-		JLabel grupo_profesional_r = new JLabel("New label"); // ESTO ES EL GRUPO PROFESIONAL
+		grupo_profesional_r = new JLabel("New label"); // ESTO ES EL GRUPO PROFESIONAL
 		panel.add(grupo_profesional_r, "cell 2 3");
 
 		JLabel grupo_cotizacion = new JLabel("Grupo de Cotizacion: ");
 		panel.add(grupo_cotizacion, "cell 0 4");
 
-		JLabel grupo_cotizacion_r = new JLabel("New label"); // ESTO ES EL GRUPO DE COTIZACION
+		grupo_cotizacion_r = new JLabel("New label"); // ESTO ES EL GRUPO DE COTIZACION
 		panel.add(grupo_cotizacion_r, "cell 2 4");
 
 		JLabel num_de_ss = new JLabel("Nº de SS");
 		panel.add(num_de_ss, "cell 0 5");
 
-		JLabel num_de_ss_r = new JLabel("New label"); //ESTO ES EL NUMERO DE SEGURIDAD SOCIAL
+		num_de_ss_r = new JLabel("New label"); //ESTO ES EL NUMERO DE SEGURIDAD SOCIAL
 		panel.add(num_de_ss_r, "cell 2 5");
 		frame.getContentPane().setLayout(groupLayout);
 	}

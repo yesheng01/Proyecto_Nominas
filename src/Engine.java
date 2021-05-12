@@ -453,6 +453,7 @@ public class Engine {
     public double totalaDeducir(double fp,double hefm, double her){
         return  fp+hefm+her;
     }
+
     public double liquidoaPercibir(double totDev, double totADed){
         return totDev-totADed;
     }
