@@ -356,4 +356,36 @@ public class Engine {
         pher = resultQuery.getInt("porce_her");
         return pher;
     }
+
+//////////////////////////////////////////////////// Calculos //////////////////////////////////////////////////////////
+
+//Total Devengado= Salario Base + Horas Extra Fuerza Mayor + Horas Extra Resto + Horas complementarias + antiguedad
+//Contingencias comunes =Total devengado - (Horas Extra Fuerza Mayor + Horas Extra Resto + Horas complementarias + antiguedad)
+//Formación Profesional= %(estipulado en convenio) de [Contingencias comunes + Horas Extra Fuerza Mayor + Horas Extra Resto + Horas complementarias  ]
+//IRPF= % del Total Devengado
+//Total a deducir=[contingencias comunes + formacion profesional + Horas Extra Fuerza Mayor + Horas Extra Resto]
+//Liquido a percibir= total devengado - total a deducir
+
+////////////////////////////////////////////// Metodos de Calculos /////////////////////////////////////////////////////
+
+    public double totalDevengado(double sb, double hefm, double her, double hc, double antiguedad){
+        return sb+hefm+her+hc+antiguedad;
+    }
+
+    public double cotingenciasComunes(double td, double hefm, double her, double hc){
+        return td-(hefm+her+hc);
+    }
+
+    public double formacionProfesional(double porc_x, double cc,double hefm, double her, double hc){
+        return  (porc_x*(cc+hefm+her+hc))/100;
+    }
+    public double IRPF(double por_y, double totdeven){
+        return  ((por_y*totdeven)/100);
+    }
+    public double totalaDeducir(double cc, double fp,double hefm, double her){
+        return  cc+fp+hefm+her;
+    }
+    public double liquidoaPercibir(double totDev, double totADed){
+        return totDev-totADed;
+    }
 }
