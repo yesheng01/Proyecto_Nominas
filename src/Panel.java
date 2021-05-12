@@ -23,6 +23,7 @@ import javax.swing.JComboBox;
 
 public class Panel extends JFrame {
 
+
 	private JFrame frame;
 	private JLabel label_Titulo;
 	private JTextField name;
@@ -50,6 +51,7 @@ public class Panel extends JFrame {
 	int entradas = 0;
 	int indiceActualEntrada;
 	javax.swing.ImageIcon cidexnb = new javax.swing.ImageIcon("src\\recursos\\cidenb2.png");
+
 	/**
 	 * Launch the application.
 	 */
@@ -59,6 +61,8 @@ public class Panel extends JFrame {
 				try {
 					Panel window = new Panel();
 					window.frame.setVisible(true);
+
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -70,6 +74,7 @@ public class Panel extends JFrame {
 	 * Create the application.
 	 */
 	public Panel() throws Exception {
+		setTitle("Nominas Balears X CIDE");
 		initialize();
 		this.getContentPane().setBackground(getBackground());
 		this.setLocationRelativeTo(null);
@@ -78,7 +83,6 @@ public class Panel extends JFrame {
 		addDnis(engine.dnis());
 
 	}
-
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -87,6 +91,7 @@ public class Panel extends JFrame {
 		frame.setBounds(200, 200, 500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
+
 		
 		label_Titulo = new JLabel(cidexnb);
 
