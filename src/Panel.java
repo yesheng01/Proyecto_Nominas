@@ -1,5 +1,5 @@
 
-import java.awt.EventQueue;
+import java.awt.*;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -78,7 +78,7 @@ public class Panel extends JFrame {
 		frame.setResizable(false);
 		
 		label_Titulo = new JLabel("NOMINABALEAR");
-		label_Titulo.setFont(label_Titulo.getFont().deriveFont(label_Titulo.getFont().getStyle()));
+		label_Titulo.setFont(new Font("Monospaced", Font.PLAIN, 13));
 		
 		JLabel dni_o_nif = new JLabel("DNI o NIF");
 		
