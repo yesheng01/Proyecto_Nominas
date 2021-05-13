@@ -2,12 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="plantilla_nomina" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c49e6746-e199-42bf-87fb-e113f3a51d7d">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="nominasbb"/>
-	<property name="com.jaspersoft.studio.data.sql.tables">
-		<![CDATA[Y29udmVuaW9zICwxNSwyNjIsNzljMjY0YzktNWQ4OS00ZGEwLTgyODEtMjE5NDEzZjk4Njc1O2hp
-c3RvcmlhbF9ub21pbmFzICwxNTMsMTUsZDI1ZmU4MDktNWM5YS00NTg5LWE1ZWEtYmQ5ZmZhNzA2
-YjFlO2VtcGxlYWRvcyAsMzQ3LDE3MSw0NjY2OWM5Yi0xYWE5LTRmNTQtYTQzYS01NWRiMzMyYTcx
-MmY7]]>
-	</property>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<queryString language="SQL">
 		<![CDATA[SELECT historial_nominas.id,
 	historial_nominas.dni_empleado,
@@ -53,12 +48,17 @@ MmY7]]>
 	empleados.id_convenio,
 	empleados.grupo_profesional,
 	empleados.grupo_cotizacion,
-	empleados.sueldo_base
+	empleados.sueldo_base,
+	deducciones.porce_hefm,
+	deducciones.porce_her,
+	deducciones.contingencias_com
 FROM historial_nominas
 	INNER JOIN empleados ON 
 	 historial_nominas.dni_empleado = empleados.dni 
 	INNER JOIN convenios ON 
-	 convenios.id = historial_nominas.id]]>
+	 convenios.id = historial_nominas.id
+	 INNER JOIN deducciones ON
+	 empleados.id_convenio = deducciones.id_convenio]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="id"/>
@@ -321,6 +321,24 @@ FROM historial_nominas
 		<property name="com.jaspersoft.studio.field.name" value="sueldo_base"/>
 		<property name="com.jaspersoft.studio.field.label" value="sueldo_base"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="empleados"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="porce_hefm" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="porce_hefm"/>
+		<property name="com.jaspersoft.studio.field.label" value="porce_hefm"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="deducciones"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="porce_her" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="porce_her"/>
+		<property name="com.jaspersoft.studio.field.label" value="porce_her"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="deducciones"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contingencias_com" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="contingencias_com"/>
+		<property name="com.jaspersoft.studio.field.label" value="contingencias_com"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="deducciones"/>
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<background>
@@ -780,10 +798,6 @@ FROM historial_nominas
 				<textFieldExpression><![CDATA[$F{porcentaje_fp}+"%"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="289" y="281" width="172" height="19" uuid="2cdce5ec-4817-4ed7-b214-0dc126b1a4d2"/>
-				<textFieldExpression><![CDATA[$F{contingencias_comunes}]]></textFieldExpression>
-			</textField>
-			<textField>
 				<reportElement x="362" y="300" width="99" height="18" uuid="c4bd09f2-4532-4128-96a1-10ed31205f48"/>
 				<textFieldExpression><![CDATA[$F{formacion_porfesional}+"€"]]></textFieldExpression>
 			</textField>
@@ -803,7 +817,7 @@ FROM historial_nominas
 			</textField>
 			<textField>
 				<reportElement x="362" y="380" width="99" height="18" uuid="fcff45bc-8545-4291-a5a9-ca17687d4faa"/>
-				<textFieldExpression><![CDATA[$F{irpf}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{irpf}+"€"]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="170" y="416" width="190" height="17" uuid="60c2d474-5434-48c3-bf7f-c5ab0a54fa89"/>
@@ -829,16 +843,30 @@ FROM historial_nominas
 				<reportElement x="420" y="450" width="113" height="36" uuid="33e14a81-5170-469a-bf3d-fdc14597f404"/>
 				<textFieldExpression><![CDATA[$F{total_a_percibir}+"€"]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="289" y="318" width="172" height="21" uuid="d0c988e1-bdb4-4a29-bf0c-18ba4402fed5"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Ya calculado]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="289" y="339" width="172" height="21" uuid="7288b364-85f4-428c-aa51-5f7c6ee5ad46"/>
-				<textElement textAlignment="Center"/>
-				<text><![CDATA[Ya calculado]]></text>
-			</staticText>
+			<textField>
+				<reportElement x="289" y="318" width="64" height="18" uuid="c93323e4-977a-49e7-8c4a-bb838942e39f"/>
+				<textFieldExpression><![CDATA[$F{porce_her}+"%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="318" width="99" height="18" uuid="ab8ad405-c6e0-48aa-99e5-9faece673a3d"/>
+				<textFieldExpression><![CDATA[(($F{porce_her}*$F{horas_extra_resto})/100)+"€"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="282" width="64" height="18" uuid="2fcac9b3-5430-4b7e-ba36-20099dda3d84"/>
+				<textFieldExpression><![CDATA[$F{contingencias_com}+"%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="282" width="99" height="18" uuid="e9bb120d-8f5c-46d9-88b9-e6a524571158"/>
+				<textFieldExpression><![CDATA[$F{contingencias_comunes}+"€"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="336" width="64" height="18" uuid="3e7b2636-e0f0-4bc9-8ff3-594715f6ef22"/>
+				<textFieldExpression><![CDATA[$F{porce_hefm}+"%"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="336" width="99" height="18" uuid="b7ddf41e-3754-4146-b456-552e25ca032a"/>
+				<textFieldExpression><![CDATA[(($F{porce_hefm}*$F{horas_extra_fm})/100)+"€"]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>
