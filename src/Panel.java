@@ -372,6 +372,7 @@ public class Panel extends JFrame {
 							String dni_empl = empleado.getDni();
 							String cif = "A58818501";
 
+							frame.dispose();
 							int gethefm_r = Integer.parseInt(hefm_r.getText());
 							int gethcr = Integer.parseInt (hc_r.getText());
 							int gether = Integer.parseInt(her_r.getText());

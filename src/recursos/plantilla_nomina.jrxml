@@ -353,66 +353,66 @@ FROM historial_nominas
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement key="" x="0" y="39" width="130" height="20" uuid="207b1bb5-3941-46a5-983b-d0d6e40bbdcd"/>
+				<reportElement key="" x="0" y="39" width="70" height="20" uuid="207b1bb5-3941-46a5-983b-d0d6e40bbdcd"/>
 				<box topPadding="1" leftPadding="5" bottomPadding="0" rightPadding="0">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Empresa:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="59" width="130" height="20" uuid="ab11bea7-b253-4f80-8fac-daab81741897"/>
+				<reportElement x="0" y="59" width="70" height="20" uuid="ab11bea7-b253-4f80-8fac-daab81741897"/>
 				<box topPadding="1" leftPadding="5" bottomPadding="0" rightPadding="0">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Domicilio:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="79" width="130" height="20" uuid="daa183a2-0184-474d-9f7e-c94843416e21"/>
+				<reportElement x="0" y="79" width="70" height="20" uuid="daa183a2-0184-474d-9f7e-c94843416e21"/>
 				<box topPadding="1" leftPadding="5" bottomPadding="0" rightPadding="0">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Localidad:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="99" width="130" height="20" uuid="05aa29e4-159e-4501-9639-5c96a87ff84c"/>
+				<reportElement x="0" y="99" width="70" height="20" uuid="05aa29e4-159e-4501-9639-5c96a87ff84c"/>
 				<box topPadding="1" leftPadding="5" bottomPadding="0" rightPadding="0">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[CIF:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="119" width="130" height="20" uuid="43f836b0-ccd0-4ed0-a118-8ecc71721d13"/>
+				<reportElement x="0" y="119" width="70" height="20" uuid="43f836b0-ccd0-4ed0-a118-8ecc71721d13"/>
 				<box topPadding="1" leftPadding="5" bottomPadding="0" rightPadding="0">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[CCC a la SS:]]></text>
@@ -425,81 +425,81 @@ FROM historial_nominas
 				</reportElement>
 			</rectangle>
 			<staticText>
-				<reportElement x="290" y="39" width="120" height="20" uuid="3db3dedd-0013-4685-929d-115e54abc469"/>
+				<reportElement x="290" y="39" width="85" height="20" uuid="3db3dedd-0013-4685-929d-115e54abc469"/>
 				<box topPadding="1" leftPadding="5" bottomPadding="0" rightPadding="0">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[NIF:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="290" y="79" width="120" height="20" uuid="9343d494-9bca-4c3b-b191-e8cc231a6691"/>
+				<reportElement x="290" y="79" width="85" height="20" uuid="9343d494-9bca-4c3b-b191-e8cc231a6691"/>
 				<box topPadding="1" leftPadding="5" bottomPadding="0" rightPadding="0">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Numero de la SS:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="290" y="99" width="120" height="20" uuid="cd07d0d9-ac21-4941-8f31-1360fc6d87b2"/>
+				<reportElement x="290" y="99" width="85" height="20" uuid="cd07d0d9-ac21-4941-8f31-1360fc6d87b2"/>
 				<box topPadding="1" leftPadding="5" bottomPadding="0" rightPadding="0">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Grupo Profesional:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="290" y="119" width="120" height="20" uuid="c93e783a-5d93-409c-b9cb-84160580288d"/>
+				<reportElement x="290" y="119" width="85" height="20" uuid="c93e783a-5d93-409c-b9cb-84160580288d"/>
 				<box topPadding="1" leftPadding="5" bottomPadding="0" rightPadding="0">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Grupo Cotización:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="410" y="39" width="145" height="20" uuid="a71454fb-323e-4c84-812f-c3a20666ae56"/>
-				<textElement textAlignment="Right">
+				<reportElement x="375" y="39" width="176" height="20" uuid="a71454fb-323e-4c84-812f-c3a20666ae56"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dni_empleado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="410" y="79" width="145" height="20" uuid="33b14b71-57c6-4c82-8aa8-6d80ccccabdf"/>
-				<textElement textAlignment="Right">
+				<reportElement x="375" y="79" width="176" height="20" uuid="33b14b71-57c6-4c82-8aa8-6d80ccccabdf"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{num_ss_empleado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="410" y="99" width="145" height="20" uuid="6ca2034f-dfff-49a2-96a3-adc216ecc46c"/>
-				<textElement textAlignment="Right">
+				<reportElement x="375" y="99" width="176" height="20" uuid="6ca2034f-dfff-49a2-96a3-adc216ecc46c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{grupo_profesional}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="410" y="119" width="145" height="20" uuid="ac6fe1bf-1d65-40ee-bdc2-312a3fe41f75"/>
-				<textElement textAlignment="Right">
+				<reportElement x="375" y="119" width="176" height="20" uuid="ac6fe1bf-1d65-40ee-bdc2-312a3fe41f75"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{grupo_cotzacion}]]></textFieldExpression>
@@ -509,50 +509,50 @@ FROM historial_nominas
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 					<pen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA["ID: "+$F{id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="130" y="39" width="140" height="20" uuid="d9c5dbec-18e7-4e6c-aa5b-c413425f530b"/>
-				<textElement textAlignment="Right"/>
+				<reportElement x="70" y="39" width="190" height="20" uuid="d9c5dbec-18e7-4e6c-aa5b-c413425f530b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{nombre_empresa}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="130" y="59" width="140" height="20" uuid="00e526e6-0649-490f-8bb9-d707813333c0"/>
-				<textElement textAlignment="Right"/>
+				<reportElement x="70" y="59" width="190" height="20" uuid="00e526e6-0649-490f-8bb9-d707813333c0"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{domicilio}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="130" y="79" width="140" height="20" uuid="c46f0805-affe-4b36-8fd6-e4f3ba755d15"/>
-				<textElement textAlignment="Right"/>
+				<reportElement x="70" y="79" width="190" height="20" uuid="c46f0805-affe-4b36-8fd6-e4f3ba755d15"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{localidad}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="130" y="99" width="140" height="20" uuid="e303459f-4245-4f3e-92f9-bc7f5d579383"/>
-				<textElement textAlignment="Right"/>
+				<reportElement x="70" y="99" width="190" height="20" uuid="e303459f-4245-4f3e-92f9-bc7f5d579383"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{cif}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="130" y="119" width="140" height="20" uuid="7630c389-b932-4efa-96f4-7b70743c3478"/>
-				<textElement textAlignment="Right"/>
+				<reportElement x="70" y="119" width="190" height="20" uuid="7630c389-b932-4efa-96f4-7b70743c3478"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{ccc_de_ss}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="290" y="59" width="120" height="20" uuid="f4bb4c37-af91-4fb1-a172-2a71d9a16e1f"/>
+				<reportElement x="290" y="59" width="85" height="20" uuid="f4bb4c37-af91-4fb1-a172-2a71d9a16e1f"/>
 				<box topPadding="1" leftPadding="5" bottomPadding="0" rightPadding="0">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Trabajador:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="410" y="59" width="145" height="20" uuid="84e779b7-246c-4138-84df-68ff5402d956"/>
-				<textElement textAlignment="Right">
+				<reportElement x="375" y="59" width="176" height="20" uuid="84e779b7-246c-4138-84df-68ff5402d956"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
@@ -572,7 +572,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="5"/>
-				<textElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Periodo de Liquidación:]]></text>
@@ -582,7 +582,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="5"/>
-				<textElement textAlignment="Left">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[del]]></text>
@@ -592,28 +592,31 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<box topPadding="1" leftPadding="5"/>
-				<textElement textAlignment="Left">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[al]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="150" y="6" width="100" height="20" uuid="e618c09a-08ec-49bd-879a-932f3571fbeb"/>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{fecha_inicio_nomina}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="290" y="6" width="100" height="20" uuid="818be186-4583-477a-947d-7fd8fceb8b37"/>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{fecha_final_nomina}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="500" y="6" width="55" height="20" uuid="14046723-f019-487b-ab5c-a6e09fa6c997"/>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{total_dias}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="390" y="6" width="110" height="20" uuid="d4f681c9-3325-4107-bee5-b85d9b9fab6d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Total de Dias:]]></text>
 			</staticText>
 		</band>
@@ -637,7 +640,7 @@ FROM historial_nominas
 			<staticText>
 				<reportElement x="29" y="10" width="90" height="21" uuid="08916e6e-0fdf-4da5-ab6b-c930fac20ee2"/>
 				<box topPadding="2" leftPadding="10"/>
-				<textElement verticalAlignment="Top">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" isBold="false" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[DEVENGOS]]></text>
@@ -645,7 +648,7 @@ FROM historial_nominas
 			<staticText>
 				<reportElement x="0" y="41" width="149" height="19" uuid="aedc38cd-8e54-49e6-a9c7-eb05b2dc2b51"/>
 				<box leftPadding="10"/>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<text><![CDATA[1.- Percepciones Salariales]]></text>
@@ -653,7 +656,7 @@ FROM historial_nominas
 			<staticText>
 				<reportElement x="370" y="10" width="80" height="21" forecolor="rgba(0, 0, 0, 0.7058824)" uuid="0f461bd2-b9dd-4162-8079-aeaf17c706a6"/>
 				<box topPadding="2" leftPadding="10"/>
-				<textElement verticalAlignment="Top">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" isBold="false" isUnderline="false"/>
 				</textElement>
 				<text><![CDATA[IMPORTE]]></text>
@@ -661,7 +664,7 @@ FROM historial_nominas
 			<staticText>
 				<reportElement x="470" y="10" width="81" height="21" uuid="29d23b5b-9e25-4eee-8790-c6e85beed211"/>
 				<box topPadding="2" leftPadding="10"/>
-				<textElement verticalAlignment="Top">
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" isBold="false" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[TOTALES]]></text>
@@ -671,7 +674,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="5"/>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Salario Base]]></text>
@@ -681,6 +684,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{salario_bruto}+"€"]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -688,7 +692,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="5"/>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Horas Extra Resto]]></text>
@@ -698,6 +702,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{horas_extra_resto}+"€"]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -705,7 +710,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="5"/>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Horas Extraordinarias  por Fuerza Mayor]]></text>
@@ -715,6 +720,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{horas_extra_fm}+"€"]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -722,7 +728,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="5"/>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Horas Complementarias]]></text>
@@ -732,24 +738,29 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{horas_complemetarias}+"€"]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="170" y="180" width="190" height="28" uuid="fd770c01-b26d-4b2a-8539-555ecbf244df"/>
 				<box leftPadding="5"/>
-				<textElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[TOTAL DEVENGADO]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="455" y="180" width="100" height="30" uuid="fe2b457c-0178-49f8-aa4f-56d1211e4c99"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{total_devengo}+"€"]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="20" y="220" width="90" height="24" uuid="445c52b4-60d8-4eae-8c91-2f8af2396d1b"/>
 				<box topPadding="2" leftPadding="10"/>
-				<textElement verticalAlignment="Top">
+				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Times New Roman" isBold="false" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[DEDUCCIONES]]></text>
@@ -759,7 +770,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="5"/>
-				<textElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[1. Aportaciones del trabajador a las cotizaciones a la S.S. Y conceptos de recaudación conjunta:]]></text>
@@ -770,7 +781,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
 				</reportElement>
 				<box leftPadding="10"/>
-				<textElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Contingencias Comunes]]></text>
@@ -780,7 +791,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="10"/>
-				<textElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Formación Profesional]]></text>
@@ -790,7 +801,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="10"/>
-				<textElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Horas Extraordinarias]]></text>
@@ -800,7 +811,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="10"/>
-				<textElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[Horas Extraordinarias  por Fuerza Mayor]]></text>
@@ -810,6 +821,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{porcentaje_fp}+"%"]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -817,6 +829,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{formacion_porfesional}+"€"]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -824,7 +837,7 @@ FROM historial_nominas
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="5"/>
-				<textElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[2. Impuesto sobre la Renta de las Personas Físicas ( IRPF ) ]]></text>
@@ -834,6 +847,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{COLUMN_40}+"%"]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -841,30 +855,39 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{irpf}+"€"]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="170" y="416" width="190" height="17" uuid="60c2d474-5434-48c3-bf7f-c5ab0a54fa89"/>
 				<box leftPadding="5"/>
-				<textElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10"/>
 				</textElement>
 				<text><![CDATA[ TOTAL A DEDUCIR]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="454" y="410" width="100" height="28" uuid="3b7f6d00-137b-4ff0-8d22-cee18e7613d5"/>
+				<reportElement x="454" y="410" width="101" height="28" uuid="3b7f6d00-137b-4ff0-8d22-cee18e7613d5"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{total_a_deducir}+"€"]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="25" y="450" width="350" height="37" uuid="eec2aaaf-6d3c-4a55-a5fd-ae13c76f4336"/>
 				<box leftPadding="10"/>
-				<textElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="20"/>
 				</textElement>
 				<text><![CDATA[LIQUIDO TOTAL A PERCIBIR:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="420" y="450" width="113" height="36" uuid="33e14a81-5170-469a-bf3d-fdc14597f404"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{total_a_percibir}+"€"]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -872,6 +895,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{porce_her}+"%"]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -879,6 +903,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[(($F{porce_her}*$F{horas_extra_resto})/100)+"€"]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -886,6 +911,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{contingencias_com}+"%"]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -893,6 +919,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{contingencias_comunes}+"€"]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -900,6 +927,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{porce_hefm}+"%"]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -907,6 +935,7 @@ FROM historial_nominas
 				<box>
 					<pen lineWidth="0.25"/>
 				</box>
+				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[(($F{porce_hefm}*$F{horas_extra_fm})/100)+"€"]]></textFieldExpression>
 			</textField>
 		</band>
