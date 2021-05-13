@@ -152,9 +152,9 @@ public class Panel extends JFrame {
 		{
 			public void keyTyped(KeyEvent e){
 			{
-				if (dia_i_r.getText().length()== 2)
+				if (dia_i_r.getText().length()== 2) //Verifica si la longitud es igual a 2, y si lo es no se puede escribir mas
 
-					e.consume();
+					e.consume(); // No escribe
 			}
 			{
 
@@ -165,7 +165,7 @@ public class Panel extends JFrame {
 						(caracter > '9')) &&
 						(caracter != '\b' /*corresponde a BACK_SPACE*/))
 				{
-					e.consume();  // ignorar el evento de teclado
+					e.consume();  // No escribe
 				}
 			}
 			}
@@ -186,12 +186,11 @@ public class Panel extends JFrame {
 
 					char caracter = e.getKeyChar();
 
-					// Verificar si la tecla pulsada no es un digito
 					if(((caracter < '0') ||
 							(caracter > '9')) &&
-							(caracter != '\b' /*corresponde a BACK_SPACE*/))
+							(caracter != '\b' ))
 					{
-						e.consume();  // ignorar el evento de teclado
+						e.consume();
 					}
 				}
 			}
@@ -215,12 +214,11 @@ public class Panel extends JFrame {
 
 					char caracter = e.getKeyChar();
 
-					// Verificar si la tecla pulsada no es un digito
 					if(((caracter < '0') ||
 							(caracter > '9')) &&
-							(caracter != '\b' /*corresponde a BACK_SPACE*/))
+							(caracter != '\b' ))
 					{
-						e.consume();  // ignorar el evento de teclado
+						e.consume();
 					}
 				}
 			}
@@ -241,12 +239,11 @@ public class Panel extends JFrame {
 
 					char caracter = e.getKeyChar();
 
-					// Verificar si la tecla pulsada no es un digito
 					if(((caracter < '0') ||
 							(caracter > '9')) &&
-							(caracter != '\b' /*corresponde a BACK_SPACE*/))
+							(caracter != '\b' ))
 					{
-						e.consume();  // ignorar el evento de teclado
+						e.consume();
 					}
 				}
 			}
@@ -271,12 +268,11 @@ public class Panel extends JFrame {
 
 					char caracter = e.getKeyChar();
 
-					// Verificar si la tecla pulsada no es un digito
 					if(((caracter < '0') ||
 							(caracter > '9')) &&
-							(caracter != '\b' /*corresponde a BACK_SPACE*/))
+							(caracter != '\b' ))
 					{
-						e.consume();  // ignorar el evento de teclado
+						e.consume();
 					}
 				}
 			}
@@ -296,12 +292,11 @@ public class Panel extends JFrame {
 
 					char caracter = e.getKeyChar();
 
-					// Verificar si la tecla pulsada no es un digito
 					if(((caracter < '0') ||
 							(caracter > '9')) &&
-							(caracter != '\b' /*corresponde a BACK_SPACE*/))
+							(caracter != '\b' ))
 					{
-						e.consume();  // ignorar el evento de teclado
+						e.consume();
 					}
 				}
 			}
@@ -321,12 +316,11 @@ public class Panel extends JFrame {
 			{
 				char caracter = e.getKeyChar();
 
-				// Verificar si la tecla pulsada no es un digito
 				if(((caracter < '0') ||
 						(caracter > '9')) &&
-						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+						(caracter != '\b'))
 				{
-					e.consume();  // ignorar el evento de teclado
+					e.consume();
 				}
 			}
 		});
@@ -339,12 +333,11 @@ public class Panel extends JFrame {
 			{
 				char caracter = e.getKeyChar();
 
-				// Verificar si la tecla pulsada no es un digito
 				if(((caracter < '0') ||
 						(caracter > '9')) &&
-						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+						(caracter != '\b'))
 				{
-					e.consume();  // ignorar el evento de teclado
+					e.consume();
 				}
 			}
 		});
@@ -357,12 +350,11 @@ public class Panel extends JFrame {
 			{
 				char caracter = e.getKeyChar();
 
-				// Verificar si la tecla pulsada no es un digito
 				if(((caracter < '0') ||
 						(caracter > '9')) &&
-						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+						(caracter != '\b'))
 				{
-					e.consume();  // ignorar el evento de teclado
+					e.consume();
 				}
 			}
 		});
