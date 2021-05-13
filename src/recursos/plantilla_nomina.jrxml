@@ -623,12 +623,7 @@ FROM historial_nominas
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
-			<image>
-				<reportElement x="200" y="-8" width="153" height="58" uuid="7340dbf5-0720-4ec8-9ca1-abb01021a6f8"/>
-				<imageExpression><![CDATA["cidenb.png"]]></imageExpression>
-			</image>
-		</band>
+		<band height="61" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
 		<band height="510" splitType="Stretch">

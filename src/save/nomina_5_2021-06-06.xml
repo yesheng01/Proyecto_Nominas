@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nomina>
+<id>5</id>
+<dni_empleado>45747471V</dni_empleado>
+<nombre>Ramon</nombre>
+<apellidos>Soler DelValle</apellidos>
+<grupo_profesional>Jefe de Desarrollo de Software</grupo_profesional>
+<grupo_cotizacion>3</grupo_cotizacion>
+<num_ss_emplado>453127864532</num_ss_emplado>
+<irpf>396.0</irpf>
+<nombre_empresa>NominaBalear</nombre_empresa>
+<cif>A58818501</cif>
+<domicilio> Carrer de Pérez Galdós, 19, Llevant (Palma de Mallorca)</domicilio>
+<ccc_de_ss>1123456742</ccc_de_ss>
+<localidad>Palma de Mallorca, España</localidad>
+<fecha_inicio_nomina>2021-05-05</fecha_inicio_nomina>
+<fecha_final_nomina>2021-06-06</fecha_final_nomina>
+<total_dias>32</total_dias>
+<salario_bruto>1540.0</salario_bruto>
+<horas_extra_fm>240.0</horas_extra_fm>
+<horas_extra_resto>100.0</horas_extra_resto>
+<horas_complementarias>100.0</horas_complementarias>
+<contingencias_comunes>1210.0</contingencias_comunes>
+<antiguedad>50.0</antiguedad>
+<total_devengo>1650.0</total_devengo>
+<total_a_deducir>144.1</total_a_deducir>
+<total_a_percibir>1505.9</total_a_percibir>
+</nomina>

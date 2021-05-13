@@ -4,6 +4,16 @@
       <root url="jar://$PROJECT_DIR$/lib/miglayout-swing.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/miglayout-core.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../../Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-digester-2.1.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib" />
+      <root url="jar://$PROJECT_DIR$/lib/groovy-all-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-collections4-4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/itext-2.1.7.js4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/itext-pdfa-5.5.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/itextpdf-5.5.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasperreports-6.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jtds-1.3.1.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/lib/miglayout-swing-javadoc.jar!/" />
@@ -12,6 +22,9 @@
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/lib/miglayout-swing-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/miglayout-core-sources.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib" />
     </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" type="SOURCES" />
   </library>
 </component>

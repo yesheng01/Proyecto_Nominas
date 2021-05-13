@@ -1,18 +1,22 @@
-
-
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JLabel;
-import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.export.JRPdfExporter;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.export.*;
+import net.sf.jasperreports.view.JasperViewer;
+
+import javax.swing.*;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 
 public class Panel2 extends JFrame{
 
@@ -120,7 +124,20 @@ public class Panel2 extends JFrame{
 
 		JPanel panel_5 = new JPanel();
 
-		JButton generar_pdf_o_csv = new JButton("Generar PDF O CSV");
+		JButton generar_pdf_o_csv = new JButton("Generar PDF, CSV o HTML");
+		generar_pdf_o_csv.addActionListener(
+				new ActionListener() {
+					@Override
+					public void actionPerformed(java.awt.event.ActionEvent evt) {
+						try {
+							jasper(evt);
+						} catch (JRException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+		);
+		add(generar_pdf_o_csv);
 
 		JButton generar_xml = new JButton("Generar XML");
 		generar_xml.addActionListener(
@@ -444,5 +461,19 @@ public class Panel2 extends JFrame{
 		}
 	}
 
+	public void jasper(ActionEvent e) throws JRException {
+		String reportSrcFile = "src\\recursos\\plantilla_nomina.jrxml";
+
+		JasperReport jasperReport = JasperCompileManager.compileReport(reportSrcFile);
+
+
+		Map<String, Object> parameters = new HashMap<String, Object>();
+
+		JasperPrint print = JasperFillManager.fillReport(jasperReport,parameters,engine.conn);
+
+		JasperViewer jw = new JasperViewer(print, false);
+		jw.setVisible(true);
+
+	}
 
 }

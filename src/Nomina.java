@@ -312,7 +312,7 @@ public class Nomina {
                     "<total_a_percibir>"+getTotal_a_percibir()+"</total_a_percibir>\n" +
                     "</nomina>";
             //Ruta
-            String path = "src\\xml\\";
+            String path = "src\\save\\";
             //Nombre del fichero
             String filename = "nomina_"+getId()+"_"+getFecha_final_nomina().toString()+ ".xml";
             File file = new File(path + filename);
