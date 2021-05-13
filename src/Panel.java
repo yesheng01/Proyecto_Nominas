@@ -124,15 +124,19 @@ public class Panel extends JFrame {
 		JLabel direccion = new JLabel("Direccion: ");
 
 		name = new JTextField();
+		name.setEditable(false);
 		name.setColumns(10);
 		
 		this.lastname = new JTextField();
+		lastname.setEditable(false);
 		this.lastname.setColumns(10);
 		
 		this.email = new JTextField();
+		this.email.setEditable(false);
 		this.email.setColumns(10);
 		
 		this.direccion = new JTextField();
+		this.direccion.setEditable(false);
 		this.direccion.setColumns(10);
 		
 		JLabel fecha_inicial = new JLabel("Fecha Inicial:");
