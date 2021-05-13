@@ -79,7 +79,6 @@ public class Panel extends JFrame {
 		this.getContentPane().setBackground(getBackground());
 		this.setLocationRelativeTo(null);
 		this.setTitle("Primer");
-
 		addDnis(engine.dnis());
 
 	}
@@ -147,8 +146,14 @@ public class Panel extends JFrame {
 		dia_i_r.setColumns(10);
 		dia_i_r.addKeyListener(new KeyAdapter()
 		{
-			public void keyTyped(KeyEvent e)
+			public void keyTyped(KeyEvent e){
 			{
+				if (dia_i_r.getText().length()== 2)
+
+					e.consume();
+			}
+			{
+
 				char caracter = e.getKeyChar();
 
 				// Verificar si la tecla pulsada no es un digito
@@ -159,6 +164,7 @@ public class Panel extends JFrame {
 					e.consume();  // ignorar el evento de teclado
 				}
 			}
+			}
 		});
 
 
@@ -166,16 +172,23 @@ public class Panel extends JFrame {
 		dia_i_f.setColumns(10);
 		dia_i_f.addKeyListener(new KeyAdapter()
 		{
-			public void keyTyped(KeyEvent e)
-			{
-				char caracter = e.getKeyChar();
-
-				// Verificar si la tecla pulsada no es un digito
-				if(((caracter < '0') ||
-						(caracter > '9')) &&
-						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+			public void keyTyped(KeyEvent e){
 				{
-					e.consume();  // ignorar el evento de teclado
+					if (dia_i_f.getText().length()== 2)
+
+						e.consume();
+				}
+				{
+
+					char caracter = e.getKeyChar();
+
+					// Verificar si la tecla pulsada no es un digito
+					if(((caracter < '0') ||
+							(caracter > '9')) &&
+							(caracter != '\b' /*corresponde a BACK_SPACE*/))
+					{
+						e.consume();  // ignorar el evento de teclado
+					}
 				}
 			}
 		});
@@ -188,16 +201,23 @@ public class Panel extends JFrame {
 		mes_i_r.setColumns(10);
 		mes_i_r.addKeyListener(new KeyAdapter()
 		{
-			public void keyTyped(KeyEvent e)
-			{
-				char caracter = e.getKeyChar();
-
-				// Verificar si la tecla pulsada no es un digito
-				if(((caracter < '0') ||
-						(caracter > '9')) &&
-						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+			public void keyTyped(KeyEvent e){
 				{
-					e.consume();  // ignorar el evento de teclado
+					if (mes_i_r.getText().length()== 2)
+
+						e.consume();
+				}
+				{
+
+					char caracter = e.getKeyChar();
+
+					// Verificar si la tecla pulsada no es un digito
+					if(((caracter < '0') ||
+							(caracter > '9')) &&
+							(caracter != '\b' /*corresponde a BACK_SPACE*/))
+					{
+						e.consume();  // ignorar el evento de teclado
+					}
 				}
 			}
 		});
@@ -207,16 +227,23 @@ public class Panel extends JFrame {
 		mes_i_f.setColumns(10);
 		mes_i_f.addKeyListener(new KeyAdapter()
 		{
-			public void keyTyped(KeyEvent e)
-			{
-				char caracter = e.getKeyChar();
-
-				// Verificar si la tecla pulsada no es un digito
-				if(((caracter < '0') ||
-						(caracter > '9')) &&
-						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+			public void keyTyped(KeyEvent e){
 				{
-					e.consume();  // ignorar el evento de teclado
+					if (mes_i_f.getText().length()== 2)
+
+						e.consume();
+				}
+				{
+
+					char caracter = e.getKeyChar();
+
+					// Verificar si la tecla pulsada no es un digito
+					if(((caracter < '0') ||
+							(caracter > '9')) &&
+							(caracter != '\b' /*corresponde a BACK_SPACE*/))
+					{
+						e.consume();  // ignorar el evento de teclado
+					}
 				}
 			}
 		});
@@ -230,16 +257,23 @@ public class Panel extends JFrame {
 		any_i_r.setColumns(10);
 		any_i_r.addKeyListener(new KeyAdapter()
 		{
-			public void keyTyped(KeyEvent e)
-			{
-				char caracter = e.getKeyChar();
-
-				// Verificar si la tecla pulsada no es un digito
-				if(((caracter < '0') ||
-						(caracter > '9')) &&
-						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+			public void keyTyped(KeyEvent e){
 				{
-					e.consume();  // ignorar el evento de teclado
+					if (any_i_r.getText().length()== 4)
+
+						e.consume();
+				}
+				{
+
+					char caracter = e.getKeyChar();
+
+					// Verificar si la tecla pulsada no es un digito
+					if(((caracter < '0') ||
+							(caracter > '9')) &&
+							(caracter != '\b' /*corresponde a BACK_SPACE*/))
+					{
+						e.consume();  // ignorar el evento de teclado
+					}
 				}
 			}
 		});
@@ -248,16 +282,23 @@ public class Panel extends JFrame {
 		any_i_f.setColumns(10);
 		any_i_f.addKeyListener(new KeyAdapter()
 		{
-			public void keyTyped(KeyEvent e)
-			{
-				char caracter = e.getKeyChar();
-
-				// Verificar si la tecla pulsada no es un digito
-				if(((caracter < '0') ||
-						(caracter > '9')) &&
-						(caracter != '\b' /*corresponde a BACK_SPACE*/))
+			public void keyTyped(KeyEvent e){
 				{
-					e.consume();  // ignorar el evento de teclado
+					if (any_i_f.getText().length()== 4)
+
+						e.consume();
+				}
+				{
+
+					char caracter = e.getKeyChar();
+
+					// Verificar si la tecla pulsada no es un digito
+					if(((caracter < '0') ||
+							(caracter > '9')) &&
+							(caracter != '\b' /*corresponde a BACK_SPACE*/))
+					{
+						e.consume();  // ignorar el evento de teclado
+					}
 				}
 			}
 		});
