@@ -383,9 +383,11 @@ public class Panel extends JFrame {
 							double herP = engine.getPorcentaje_her(empleado.getId_convenio());
 							double prechefm = (hefmP*hefmFin)/100;
 							double precher = (herP*hcFin)/100;
-							double totalDev = engine.totalDevengado(engine.getSueldo_base(dni_empl), gethefm_r, gether , gethcr , engine.antiguedad(empleado.getId_convenio()));
+							double antiguedad = engine.cobradoAntiguedad(anyosW,engine.antiguedad(empleado.getId_convenio()));
+							double totalDev = engine.totalDevengado(engine.getSueldo_base(dni_empl), hefmFin, herFin , hcFin , antiguedad);
 							double cc = engine.cotingenciasComunes(totalDev,hefmFin ,herFin, hcFin);
 							double irpfdone = (engine.getIrpf(dni_empl)*totalDev)/100;
+
 
 							double fp = engine.formacionProfesional(engine.fp(empleado.getId_convenio()),cc,hefmFin,herFin,hcFin);
 							double totoalDeduc = engine.totalaDeducir(fp,prechefm, precher);
@@ -393,7 +395,7 @@ public class Panel extends JFrame {
 
 							engine.insertarNomina(engine.obtenirNouIDNomina(), dni_empl, empleado.getNom(), empleado.getApellidos(),engine.getGrupo_profesional(dni_empl),engine.getGrupo_cotizacion(dni_empl), engine.getNum_ss(dni_empl),
 									irpfdone,engine.getCcc_ss(cif), fecha_inicio(evt),
-									fecha_final(evt),dias,engine.getSueldo_base(dni_empl),hefmFin, herFin,hcFin,cc,totalDev,totoalDeduc,totoalPerc,engine.cobradoAntiguedad(anyosW,engine.antiguedad(empleado.getId_convenio())),fp);
+									fecha_final(evt),dias,engine.getSueldo_base(dni_empl),hefmFin, herFin,hcFin,cc,totalDev,totoalDeduc,totoalPerc,antiguedad,fp);
 
 						} catch (Exception e) {
 							e.printStackTrace();
