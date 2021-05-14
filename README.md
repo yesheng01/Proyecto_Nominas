@@ -15,19 +15,4 @@ Base de datos principal:
   jdbc:mysql://bq7xcggx4wgir1svxet5-mysql.services.clever-cloud.com:3306/bq7xcggx4wgir1svxet5
 
 
-
-
-
-Base de datos por si falla:
-
-  Host: db4free.net
-
-  Data Base Name: nominas2021
-
-  User: admincide
-
-  Password: Cide2021
-
-  Port: 3306
-
-  jdbc:mysql://db4free.net:3306/nominas2021
+Base de datos exportada en: Proyecto_Nominas/src/recursos/bd_nominas.sql
